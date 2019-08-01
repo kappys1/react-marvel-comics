@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { loadAllComics } from './modules/catalog/actions';
 import './App.scss';
+import { connect, useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="App">Alex</div>
+      <button onClick={() => dispatch(loadAllComics(1))}>Click</button>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  category: state.route
+});
+
+const mapDispathToProps = {
+  loadAllComics
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispathToProps
+)(App);
