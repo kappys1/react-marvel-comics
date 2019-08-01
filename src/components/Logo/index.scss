@@ -1,0 +1,17 @@
+@import '../../theme/mixins/flexbox';
+
+.Logo {
+  @include flex-content(column, center, center);
+  img {
+    width: 282px;
+  }
+
+  &-subtitle {
+    transform: rotate(-9deg);
+    text-shadow: 6px 5px 6px rgba(0, 0, 0, 0.5);
+    font-family: AvengeanceHeroicAvenger;
+    font-size: 46px;
+    position: relative;
+    bottom: 1rem;
+  }
+}

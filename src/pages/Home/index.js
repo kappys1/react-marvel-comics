@@ -1,13 +1,14 @@
 import React from 'react';
-import { loadAllComics } from './modules/catalog/actions';
-import './App.scss';
+import { loadAllComics } from '../../modules/catalog/actions';
+import './Home.scss';
 import { connect, useDispatch } from 'react-redux';
+import Logo from '../../components/Logo';
 
-function App() {
+function Home() {
   const dispatch = useDispatch();
   return (
     <div>
-      <div className="App">Alex</div>
+      <Logo></Logo>
       <button onClick={() => dispatch(loadAllComics(1))}>Click</button>
     </div>
   );
@@ -24,4 +25,4 @@ const mapDispathToProps = {
 export default connect(
   mapStateToProps,
   mapDispathToProps
-)(App);
+)(Home);

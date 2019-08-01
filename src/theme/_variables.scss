@@ -1,0 +1,31 @@
+// color palete
+$c-backgroundgray: #d8d8d8;
+$c-red: #ed2227;
+$c-white: #ffffff;
+$c-black: #000000;
+$c-white: #f4f4f4;
+$c-dark: #35393d;
+$c-gradient-1: linear-gradient(to bottom, var(--white), rgba(237, 34, 39, 0.77));
+$c-gradient-1: linear-gradient(to bottom, var(--white), rgba(237, 34, 39, 0.77));
+
+// Font weights
+$fw-light: 300 !default;
+$fw-regular: 400 !default;
+$fw-semi-bold: 500 !default;
+$fw-bold: 700 !default;
+
+// text-size-base
+$fz-base: 1rem !default; // assuming 16px
+$fz-lg: $fz-base * 1.25 !default; // assuming 16px
+$fz-sm: $fz-base * 0.75 !default; // assuming 16px
+
+// text-size-base
+$fz-h1: $fz-base * 2.2 !default; // 36px
+$fz-h2: $fz-base * 1.9 !default; // 36px
+$fz-label: $fz-base * 1.75 !default; // 24px
+$fz-body: $fz-base * 1.75 !default; // 24px
+
+// $sm-h1: 1.5rem; //24px
+// $sm-h2: 1.1rem; //18px
+// $sm-label: 1.1rem; //18px
+// $sm-body: 1rem; //16px

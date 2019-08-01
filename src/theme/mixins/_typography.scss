@@ -1,0 +1,23 @@
+@mixin h1 {
+  font-size: $fz-h1;
+  font-weight: $fw-bold;
+  // margin: 0 0 $m-y;
+}
+
+@mixin h2 {
+  font-size: $fz-h2;
+  font-weight: $fw-bold;
+  // margin: 0 0 $m-y;
+}
+
+@mixin label {
+  font-size: $fz-label;
+  font-weight: $fw-regular;
+  // margin: 0 0 $m-y;
+}
+
+@mixin body {
+  font-size: $fz-body;
+  font-weight: $fw-regular;
+  // margin: 0 0 $m-y;
+}
