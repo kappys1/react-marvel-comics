@@ -2,6 +2,7 @@
 
 .Logo {
   @include flex-content(column, center, center);
+
   img {
     width: 282px;
   }
