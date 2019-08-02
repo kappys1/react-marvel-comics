@@ -1,0 +1,11 @@
+@import '../../theme/mixins/flexbox';
+
+.ItemComic__image {
+  transition: width 0.5s ease-in-out;
+}
+
+.slick-slide:not(.slick-active) {
+  .ItemComic__image {
+    width: 67px;
+  }
+}

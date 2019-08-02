@@ -4,9 +4,10 @@ import './index.scss';
 function ItemComic({ comic }) {
   return (
     <div className="ItemComic">
-      {/* <img src={} alt="ItemComic" /> */}
-      <h1>Lorem Ipsum</h1>
-      {/* <div className="body"></div> */}
+      {console.log(comic)}
+      <img className="ItemComic__image" src={comic.thumbnail} alt="ItemComic" />
+      <h1>{comic.title}</h1>
+      <div className="body"></div>
     </div>
   );
 }

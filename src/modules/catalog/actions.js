@@ -1,5 +1,6 @@
 import { LOAD_ALL_COMICS, FILTER_COMICS } from './actionsTypes';
 import MarvelApI from '../../services/MarvelApi';
+import Adapter from '../../services/Adapter';
 
 export const loadAllComics = page => async (dispatch, getState) => {
   callApiAction({ page: page }, LOAD_ALL_COMICS)(dispatch, getState);
@@ -19,7 +20,7 @@ const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
   const { results, total, offset, count } = json.data;
   dispatch({
     type: dispatcher.SUCCESS,
-    comics: results,
+    comics: results.map(r => Adapter.comicAdapter(r)),
     total: total,
     hasMore: Boolean(total > count && offset < total)
   });

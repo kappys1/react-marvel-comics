@@ -2,22 +2,28 @@ import React from 'react';
 import { loadAllComics } from '../../modules/catalog/actions';
 import './Home.scss';
 import { connect, useDispatch } from 'react-redux';
-import ItemComic from '../../components/ItemComic';
 import Logo from '../../components/Logo';
+import Carousel from '../../components/Carousel';
 
-function Home() {
+function Home({ comics }) {
   const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(loadAllComics(1));
+  };
+
   return (
     <div>
-      <Logo></Logo>
-      <ItemComic></ItemComic>
-      <button onClick={() => dispatch(loadAllComics(1))}>Click</button>
+      <Logo className="Logo--mini"></Logo>
+      <Carousel items={comics}></Carousel>
+      <button onClick={handleSubmit}>Click</button>
     </div>
   );
 }
 
 const mapStateToProps = state => ({
-  category: state.route
+  comics: state.catalog.comics
 });
 
 const mapDispathToProps = {

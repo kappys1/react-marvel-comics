@@ -15,4 +15,14 @@
     position: relative;
     bottom: 1rem;
   }
+
+  &--mini {
+    img {
+      width: 173px;
+    }
+
+    .Logo-subtitle {
+      font-size: 24px;
+    }
+  }
 }

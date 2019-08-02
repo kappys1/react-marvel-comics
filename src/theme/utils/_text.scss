@@ -1,6 +1,15 @@
 @mixin typography {
+  html {
+    font-size: $fz-sm;
+
+    @include breakpoint(desktop) {
+      font-size: 1rem;
+    }
+  }
+
   h1 {
     @include h1;
+
     &.white {
       color: $c-white;
     }
@@ -8,6 +17,7 @@
 
   h2 {
     @include h2;
+
     &.white {
       color: $c-white;
     }
@@ -15,6 +25,7 @@
 
   .label {
     @include label;
+
     &.white {
       color: $c-white;
     }
@@ -23,6 +34,7 @@
   //Text colors
   .text-body {
     @include body;
+
     &.white {
       color: $c-white;
     }
@@ -31,9 +43,11 @@
   .text-left {
     text-align: left;
   }
+
   .text-center {
     text-align: center;
   }
+
   .text-right {
     text-align: right;
   }
