@@ -32,7 +32,7 @@ export default (state = INITIAL_STATE, action) => {
           isLoading: false,
           total: action.total,
           hasMore: action.hasMore,
-          items: [...state.comics.items, ...action.comics],
+          items: state.comics.items.concat(action.comics),
           original: state.comics.items
         }
       };

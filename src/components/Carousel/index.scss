@@ -1,11 +1,18 @@
 @import '../../theme/mixins/flexbox';
 
-.ItemComic__image {
-  transition: width 0.5s ease-in-out;
+// .ItemComic__image {
+//   transition: width .7s ease-in-out;
+// }
+
+.ItemComic {
+  transition: transform 0.7s ease-in-out;
+  transform-origin: left top;
+  transform-style: preserve-3d;
 }
 
 .slick-slide:not(.slick-active) {
-  .ItemComic__image {
-    width: 67px;
+  .ItemComic {
+    // width: 150px;
+    transform: scale(0.5);
   }
 }

@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { loadAllComics } from '../../modules/catalog/actions';
 import './Home.scss';
 import { connect, useDispatch } from 'react-redux';
-import Logo from '../../components/Logo';
+import Header from '../../components/Header';
 import Carousel from '../../components/Carousel';
 
 function Home({ comics }) {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(loadAllComics(1));
+  const loadPage = () => {
+    dispatch(loadAllComics(page));
   };
 
+  const handleSlidePage = slide => {
+    const thresholdUpdate = 3;
+    console.log(slide);
+    if (slide + thresholdUpdate === comics.items.length) {
+      setPage(page + 1);
+      loadPage();
+    }
+  };
+
+  useEffect(() => {
+    loadPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div>
-      <Logo className="Logo--mini"></Logo>
-      <Carousel items={comics}></Carousel>
-      <button onClick={handleSubmit}>Click</button>
+    <div className="page">
+      <Header className="Header--mini"></Header>
+      <Carousel items={comics} onSlideChange={slide => handleSlidePage(slide)}></Carousel>
     </div>
   );
 }

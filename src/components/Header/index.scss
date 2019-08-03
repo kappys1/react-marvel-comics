@@ -1,0 +1,15 @@
+@import '../../theme/mixins/flexbox';
+
+.Header {
+  @include flex-content(column, center, center);
+
+  img {
+    width: 282px;
+  }
+
+  &--mini {
+    img {
+      width: 173px;
+    }
+  }
+}

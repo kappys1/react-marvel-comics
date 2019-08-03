@@ -2,13 +2,12 @@ import React from 'react';
 import './index.scss';
 import logo from '../../assets/images/logo.png';
 
-function Logo({ className }) {
+function Header({ className }) {
   return (
-    <div className={`Logo ${className}`}>
+    <div className={`Header ${className}`}>
       <img src={logo} alt="Logo" />
-      <div className="Logo-subtitle">Comics</div>
     </div>
   );
 }
 
-export default Logo;
+export default Header;

@@ -5,8 +5,8 @@ $c-white: #ffffff;
 $c-black: #000000;
 $c-white: #f4f4f4;
 $c-dark: #35393d;
-$c-gradient-1: linear-gradient(to bottom, var(--white), rgba(237, 34, 39, 0.77));
-$c-gradient-1: linear-gradient(to bottom, var(--white), rgba(237, 34, 39, 0.77));
+$c-gradient-1: linear-gradient(to bottom, $c-white, rgba(237, 34, 39, 0.77));
+$c-gradient-1: linear-gradient(to bottom, $c-white, rgba(237, 34, 39, 0.77));
 
 // Font weights
 $fw-light: 300 !default;
@@ -17,7 +17,7 @@ $fw-bold: 700 !default;
 // text-size-base
 $fz-base: 1rem !default; // assuming 16px
 $fz-lg: $fz-base * 1.25 !default; // assuming 16px
-$fz-sm: $fz-base * 0.75 !default; // assuming 16px
+$fz-sm: $fz-base * 0.6 !default; // assuming 16px
 
 // text-size-base
 $fz-h1: $fz-base * 2 !default; // 36px

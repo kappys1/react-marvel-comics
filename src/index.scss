@@ -1,11 +1,27 @@
 @import 'theme/theme';
 @import './assets/fonts/fonts.css';
 
+html,
+#root,
+.page,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: Futura Std, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Futura Std, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  background-image: $c-gradient-1;
+  background-size: 100% 100%;
+}
+
+.page {
+  background: transparent;
 }

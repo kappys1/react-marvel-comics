@@ -1,9 +1,9 @@
 import React from 'react';
 import './index.scss';
 
-function ItemComic({ comic }) {
+function ItemSearchComic({ comic }) {
   return (
-    <div className="ItemComic">
+    <div className="ItemSearchComic">
       <img className="ItemComic__image" src={comic.thumbnail} alt="ItemComic" />
       <h1 className="white">{comic.title}</h1>
       <div className="body white"></div>
@@ -11,4 +11,4 @@ function ItemComic({ comic }) {
   );
 }
 
-export default ItemComic;
+export default ItemSearchComic;
