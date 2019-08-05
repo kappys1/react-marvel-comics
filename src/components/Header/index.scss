@@ -1,7 +1,18 @@
 @import '../../theme/mixins/flexbox';
+@import '../../theme/variables';
 
 .Header {
-  @include flex-content(column, center, center);
+  .col {
+    width: 33.3%;
+    text-align: center;
+
+    i {
+      font-size: 2rem;
+      color: $c-dark;
+    }
+  }
+
+  @include flex-content(row, center, center);
 
   img {
     width: 282px;

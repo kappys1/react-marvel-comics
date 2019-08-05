@@ -3,15 +3,22 @@ import MarvelApI from '../../services/MarvelApi';
 import Adapter from '../../services/Adapter';
 
 export const loadAllComics = page => async (dispatch, getState) => {
-  callApiAction({ page: page }, LOAD_ALL_COMICS)(dispatch, getState);
+  callApiAction({ page: page }, LOAD_ALL_COMICS)(dispatch, getState).then(res => dispatch(res));
 };
 
 export const filterResults = (page, name) => async (dispatch, getState) => {
-  callApiAction({ page: page, nameStartsWith: name }, FILTER_COMICS)(dispatch, getState);
+  callApiAction({ page: page, titleStartsWith: name }, FILTER_COMICS)(dispatch, getState).then(
+    res => {
+      dispatch({
+        ...res,
+        payload: name
+      });
+    }
+  );
 };
 
 const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
-  dispatch({ type: dispatcher.REQUEST });
+  dispatch({ type: dispatcher.REQUEST, payload: options.titleStartsWith });
   const json = await MarvelApI.getComics(options)
     .then(res => res.json())
     .catch(error => {
@@ -19,7 +26,7 @@ const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
     });
   const { results, total, offset, count } = json.data;
   console.log(results, total, offset, count);
-  dispatch({
+  return Promise.resolve({
     type: dispatcher.SUCCESS,
     comics: results.map(r => Adapter.comicAdapter(r)),
     total: total,

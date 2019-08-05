@@ -3,7 +3,7 @@ import CryptoJS from 'crypto-js';
 class MarvelApI {
   static getComics(origOptions = {}) {
     const baseUrl = 'https://gateway.marvel.com:443';
-    const defaultOptions = { page: 1, count: 10, name: '', nameStartsWith: '' };
+    const defaultOptions = { page: 1, count: 10, name: '', titleStartsWith: '' };
     const options = Object.assign(defaultOptions, origOptions);
 
     const URI = '/v1/public/comics';
@@ -18,8 +18,8 @@ class MarvelApI {
     if (options.name) {
       params = params.concat(`&name=${options.name}`);
     }
-    if (options.nameStartsWith) {
-      params = params.concat(`&nameStartsWith=${options.nameStartsWith}`);
+    if (options.titleStartsWith) {
+      params = params.concat(`&titleStartsWith=${options.titleStartsWith}`);
     }
     const url = `${baseUrl}${URI}${params}`;
 

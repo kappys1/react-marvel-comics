@@ -1,0 +1,58 @@
+@import '../../theme/mixins/flexbox';
+@import '../../theme/variables';
+
+.modal {
+  height: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.85;
+}
+
+.modal-wrapper {
+  position: fixed;
+  padding: 0.5rem;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-header {
+  @include flex-content(row, center, flex-end);
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+
+  i {
+    font-size: 3rem;
+    color: white;
+  }
+}
+
+.modal-body {
+  height: 87%;
+
+  .SearchBar {
+    width: 80%;
+    margin-top: 2em;
+  }
+
+  .content-search {
+    margin-top: 2em;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .ItemSearchComic {
+    margin-bottom: 2em;
+  }
+}

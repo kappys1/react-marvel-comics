@@ -1,12 +1,17 @@
 @import '../../theme/mixins/flexbox';
 
-.ItemComic {
+.ItemSearchComic {
   width: 100%;
+  @include flex-content(row, center, center);
 
   &__image {
     width: 100%;
-    max-width: 232px;
+    max-width: 80px;
     box-shadow: 6px 6px 20px 0 #000000;
+  }
+
+  &__description {
+    @include flex-content(column, center, flex-start);
   }
 
   h1 {
