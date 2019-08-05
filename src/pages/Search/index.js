@@ -1,31 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from '../../components/SearchBar';
 import './index.scss';
 import { connect, useDispatch } from 'react-redux';
 import { filterResults } from '../../modules/catalog/actions';
 import ItemSearchComic from '../../components/ItemSearchComic';
+import useInfiniteScroll from './useInfiniteScroll';
 
-const Search = ({ isShowing, hide, comicsFilter }) => {
+const Search = ({ isShowing, hide, comicsFilter, status }) => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+  const [name, setName] = useState('');
+  const listRef = useRef(null);
+  const [isFetching, setIsFetching, setListRef] = useInfiniteScroll(handleScroll);
+  const isLoading = status.isSearching && status.isNewSearch;
 
-  const loadPage = name => {
-    dispatch(filterResults(page, name));
-  };
+  useEffect(() => {
+    if (listRef.current) {
+      setListRef(listRef);
+    }
+  }, [isShowing]);
+
+  useEffect(() => {
+    console.log('finish');
+    setIsFetching(false);
+  }, [comicsFilter.items]);
 
   const handleChangeInput = name => {
     if (name.length >= 3) {
-      loadPage(name);
+      setPage(1);
+      setName(name);
+      dispatch(filterResults(page, name));
     }
-    console.log(name);
   };
 
+  function handleScroll() {
+    if (comicsFilter.hasMore) {
+      setPage(page + 1);
+      console.log(page);
+      dispatch(filterResults(page + 1, name));
+    }
+  }
+
   const comicsSearchItems = () => {
-    console.log(comicsFilter);
-    return comicsFilter.items.map((val, i) => {
-      return <ItemSearchComic key={i} comic={val}></ItemSearchComic>;
-    });
+    if (comicsFilter.items.length) {
+      return comicsFilter.items.map((val, i) => (
+        <ItemSearchComic key={i} comic={val}></ItemSearchComic>
+      ));
+    } else {
+      return <div className="no-content">No results</div>;
+    }
   };
 
   return isShowing
@@ -50,7 +74,22 @@ const Search = ({ isShowing, hide, comicsFilter }) => {
                   onChangeInput={handleChangeInput}
                   onClickSearch={handleChangeInput}
                 ></SearchBar>
-                <div className="content-search">{comicsSearchItems()}</div>
+                <div className="container-search" ref={listRef}>
+                  {!isLoading ? (
+                    comicsSearchItems()
+                  ) : (
+                    <div className="container-search content-loading">
+                      <i className="icon-loading"></i>
+                    </div>
+                  )}
+                  {isFetching ? (
+                    <div>
+                      <i className="icon-loading"></i>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -61,7 +100,8 @@ const Search = ({ isShowing, hide, comicsFilter }) => {
 };
 
 const mapStateToProps = state => ({
-  comicsFilter: state.catalog.comicsFilter
+  comicsFilter: state.catalog.comicsFilter,
+  status: state.catalog.status
 });
 
 const mapDispathToProps = {

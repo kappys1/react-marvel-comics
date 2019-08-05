@@ -3,7 +3,8 @@ import { LOAD_ALL_COMICS, FILTER_COMICS } from './actionsTypes';
 const INITIAL_STATE = {
   status: {
     isLoading: false,
-    isSearching: false
+    isSearching: false,
+    isNewSearch: false
   },
   comics: {
     hasMore: true,
@@ -18,8 +19,7 @@ const INITIAL_STATE = {
     original: [],
     count: 12,
     total: 0,
-    filter: '',
-    isNewSearch: false
+    filter: ''
   }
 };
 

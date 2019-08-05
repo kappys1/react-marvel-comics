@@ -1,0 +1,7 @@
+@import '../mixins/animations';
+
+@include keyframes(spin) {
+  100% {
+    transform: rotate(360deg);
+  }
+}
