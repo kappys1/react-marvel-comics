@@ -12,4 +12,5 @@ const makeActionTypes = base => {
 
 export const LOAD_ALL_COMICS = makeActionTypes('LOAD_ALL_COMICS');
 export const FILTER_COMICS = makeActionTypes('FILTER_COMICS');
+export const SELECT_COMIC = 'SELECT_COMIC';
 export const CHANGE_FILTER = 'CHANGE_FILTER';

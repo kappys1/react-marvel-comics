@@ -1,11 +1,13 @@
-import { LOAD_ALL_COMICS, FILTER_COMICS } from './actionsTypes';
+import { LOAD_ALL_COMICS, FILTER_COMICS, SELECT_COMIC } from './actionsTypes';
 
 const INITIAL_STATE = {
   status: {
     isLoading: false,
     isSearching: false,
+    isInDetail: false,
     isNewSearch: false
   },
+  comicDetail: {},
   comics: {
     hasMore: true,
     items: [],
@@ -24,7 +26,6 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-  console.log(action, state);
   switch (action.type) {
     case LOAD_ALL_COMICS.REQUEST:
       return {
@@ -107,6 +108,15 @@ export default (state = INITIAL_STATE, action) => {
           ...state.comicsFilter,
           filter: '',
           items: state.comicsFilter.original
+        }
+      };
+    case SELECT_COMIC:
+      return {
+        ...state,
+        comicDetail: action.payload,
+        status: {
+          ...state.status,
+          isInDetail: action.payload.id
         }
       };
     default:

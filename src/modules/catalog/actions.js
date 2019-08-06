@@ -1,4 +1,4 @@
-import { LOAD_ALL_COMICS, FILTER_COMICS } from './actionsTypes';
+import { LOAD_ALL_COMICS, FILTER_COMICS, SELECT_COMIC } from './actionsTypes';
 import MarvelApI from '../../services/MarvelApi';
 import Adapter from '../../services/Adapter';
 
@@ -17,6 +17,11 @@ export const filterResults = (page, name) => async (dispatch, getState) => {
   );
 };
 
+export const selectComic = comic => ({
+  type: SELECT_COMIC,
+  payload: comic
+});
+
 const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
   dispatch({ type: dispatcher.REQUEST, payload: options.titleStartsWith });
   const json = await MarvelApI.getComics(options)
@@ -25,7 +30,6 @@ const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
       dispatch({ type: dispatcher.FAILURE, message: error.message });
     });
   const { results, total, offset, count } = json.data;
-  console.log(results, total, offset, count);
   return Promise.resolve({
     type: dispatcher.SUCCESS,
     comics: results.map(r => Adapter.comicAdapter(r)),

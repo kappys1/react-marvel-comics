@@ -1,6 +1,7 @@
 class Adapter {
   static comicAdapter(data) {
     return {
+      id: data.id,
       title: data.title,
       description: data.description,
       thumbnail: `${data.thumbnail.path}/portrait_uncanny.${data.thumbnail.extension}`,

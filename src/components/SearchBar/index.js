@@ -19,11 +19,18 @@ function SearchBar({ className, onClickSearch, onChangeInput }) {
     }
     e.preventDefault();
   };
+
   return (
     <div className={`SearchBar`}>
       <form onSubmit={handleSubmit}>
         <label>
-          <input type="text" value={name} onChange={handleChangeInput} placeholder="Search ..." />
+          <input
+            autoFocus
+            type="text"
+            value={name}
+            onChange={handleChangeInput}
+            placeholder="Search ..."
+          />
         </label>
       </form>
     </div>

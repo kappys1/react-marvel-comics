@@ -1,0 +1,16 @@
+.Detail-page {
+  position: relative;
+  padding-top: 5em;
+
+  .ItemComic {
+    padding: 0px 0 30px 50px;
+    transition: width 0.5s ease-in-out;
+    width: 30%;
+  }
+
+  &.animate {
+    .ItemComic {
+      width: 30%;
+    }
+  }
+}
