@@ -14,14 +14,14 @@
 
 @mixin label {
   font-size: $fz-label;
-  font-weight: $fw-regular;
+  font-weight: $fw-semi-bold;
   line-height: 1.2;
   // margin: 0 0 $m-y;
 }
 
 @mixin body {
   font-size: $fz-body;
-  font-weight: $fw-regular;
+  font-weight: $fw-light;
   line-height: 1.2;
   // margin: 0 0 $m-y;
 }

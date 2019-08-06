@@ -7,10 +7,10 @@ import { filterResults } from '../../modules/catalog/actions';
 import ItemSearchComic from '../../components/ItemSearchComic';
 import useInfiniteScroll from './useInfiniteScroll';
 
-const Search = ({ isShowing, hide, comicsFilter, status }) => {
+const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [name, setName] = useState('');
+  const [name, setName] = useState(comicsFilter.filter);
   const listRef = useRef(null);
   const [isFetching, setIsFetching, setListRef] = useInfiniteScroll(handleScroll);
   const isLoading = status.isSearching && status.isNewSearch;
@@ -42,10 +42,16 @@ const Search = ({ isShowing, hide, comicsFilter, status }) => {
     }
   }
 
+  function handleClickItem(e) {
+    if (onClickItem) {
+      onClickItem(e);
+    }
+  }
+
   const comicsSearchItems = () => {
     if (comicsFilter.items.length) {
       return comicsFilter.items.map((val, i) => (
-        <ItemSearchComic key={i} comic={val}></ItemSearchComic>
+        <ItemSearchComic onClick={() => handleClickItem(val)} key={i} comic={val}></ItemSearchComic>
       ));
     } else {
       return <div className="no-content">No results</div>;
@@ -71,6 +77,7 @@ const Search = ({ isShowing, hide, comicsFilter, status }) => {
               </div>
               <div className="modal-body">
                 <SearchBar
+                  value={name}
                   onChangeInput={handleChangeInput}
                   onClickSearch={handleChangeInput}
                 ></SearchBar>

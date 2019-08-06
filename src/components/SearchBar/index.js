@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './index.scss';
 import logo from '../../assets/images/logo.png';
 
-function SearchBar({ className, onClickSearch, onChangeInput }) {
-  const [name, setName] = useState('');
+function SearchBar({ value, className, onClickSearch, onChangeInput }) {
+  const [name, setName] = useState(value);
 
   const handleSubmit = e => {
     e.preventDefault();

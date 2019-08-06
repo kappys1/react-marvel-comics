@@ -29,13 +29,16 @@ function Home({ comics, status }) {
     toggle();
   };
 
+  const handleClickItemSearch = comic => {
+    toggle();
+    dispatch(selectComic(comic));
+  };
+
   const handleClickItemCarousel = comic => {
-    console.log(comic);
     dispatch(selectComic(comic));
   };
 
   const handleClickBack = () => {
-    console.log('back');
     dispatch(selectComic({}));
   };
 
@@ -61,7 +64,7 @@ function Home({ comics, status }) {
       ) : (
         <Detail items={comics} onSlideChange={handleSlidePage}></Detail>
       )}
-      <Search isShowing={isShowing} hide={toggle} />
+      <Search onClickItem={handleClickItemSearch} isShowing={isShowing} hide={toggle} />
     </div>
   );
 }
