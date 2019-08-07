@@ -1,4 +1,5 @@
 @import '../../theme/mixins/flexbox';
+@import '../../theme/mixins/breakpoints';
 
 .ItemComic {
   width: 100%;
@@ -11,5 +12,15 @@
 
   h1 {
     margin-top: 0.7em;
+  }
+
+  .text-body {
+    margin-top: 2%;
+  }
+
+  @include breakpoint(desktop) {
+    &__image {
+      max-width: 400px;
+    }
   }
 }

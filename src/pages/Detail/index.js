@@ -8,7 +8,6 @@ function Detail({ comic }) {
   const [enterAnimation, setEnterAnimation] = useState('');
 
   useEffect(() => {
-    console.log(comic);
     setEnterAnimation('animate');
   }, []);
 

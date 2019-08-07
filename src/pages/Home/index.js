@@ -11,6 +11,7 @@ import Detail from '../../pages/Detail';
 function Home({ comics, status }) {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+  const [slide, setSlide] = useState(0);
   const { isShowing, toggle } = useSearch();
 
   const loadPage = () => {
@@ -23,6 +24,7 @@ function Home({ comics, status }) {
       setPage(page + 1);
       loadPage();
     }
+    setSlide(actualSlide);
   };
 
   const handleClickSearch = () => {
@@ -57,6 +59,7 @@ function Home({ comics, status }) {
       ></Header>
       {!status.isInDetail ? (
         <Carousel
+          initSlide={slide}
           items={comics}
           onClickItemComic={handleClickItemCarousel}
           onSlideChange={handleSlidePage}

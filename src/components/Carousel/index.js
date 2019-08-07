@@ -1,14 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ItemComic from '../../components/ItemComic';
 import './index.scss';
 
-function Carousel({ items, onSlideChange, onClickItemComic }) {
+function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   const speedTransition = 700;
-
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const carousel = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(initSlide);
   const carouselItems = items.items.map((val, i) => {
     return (
       <ItemComic
@@ -19,7 +19,10 @@ function Carousel({ items, onSlideChange, onClickItemComic }) {
       ></ItemComic>
     );
   });
-  const carousel = useRef(null);
+
+  useEffect(() => {
+    carousel.current.slickGoTo(currentSlide, true);
+  }, []);
 
   const handleClickItemComic = (comic, i) => {
     const current = items.items[currentSlide];
@@ -44,17 +47,27 @@ function Carousel({ items, onSlideChange, onClickItemComic }) {
   };
 
   const settings = {
-    className: 'slider variable-width',
+    className: 'slider',
     dots: false,
     infinite: false,
-    centerMode: true,
-    draggable: true,
-    // swipeToSlide: true,
+    centerMode: false,
     speed: speedTransition,
-    slidesToShow: 1,
+    slidesToShow: 5,
+    row: 1,
     slidesToScroll: 1,
-    beforeChange: (current, next) => handleSlideChange(next)
+    beforeChange: (current, next) => handleSlideChange(next),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+
   return (
     <Slider ref={carousel} {...settings}>
       {carouselItems}
