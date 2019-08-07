@@ -50,22 +50,11 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     className: 'slider',
     dots: false,
     infinite: false,
-    centerMode: false,
     speed: speedTransition,
-    slidesToShow: 5,
-    row: 1,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (current, next) => handleSlideChange(next),
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          centerMode: true,
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    variableWidth: true,
+    beforeChange: (current, next) => handleSlideChange(next)
   };
 
   return (
