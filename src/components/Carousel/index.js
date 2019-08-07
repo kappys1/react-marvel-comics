@@ -20,6 +20,12 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   });
 
   useEffect(() => {
+    if (onSlideChange) {
+      onSlideChange(currentSlide);
+    }
+  }, [currentSlide]);
+
+  useEffect(() => {
     console.log(swiper);
     if (swiper) {
       setTimeout(() => setEnterAnimation('animate'), 100);
@@ -43,9 +49,6 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
 
   const handleSlideChange = () => {
     const next = swiper.activeIndex;
-    if (onSlideChange) {
-      onSlideChange(next);
-    }
     setCurrentSlide(next);
   };
 

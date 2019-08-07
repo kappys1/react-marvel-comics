@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { loadAllComics, selectComic } from '../../modules/catalog/actions';
 import './index.scss';
 import { connect, useDispatch } from 'react-redux';
@@ -44,11 +44,6 @@ function Home({ comics, status }) {
   const handleClickBack = () => {
     dispatch(selectComic({}));
   };
-
-  useEffect(() => {
-    loadPage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className={`page ${status.isInDetail ? 'page__detail' : 'page__home'}`}>
