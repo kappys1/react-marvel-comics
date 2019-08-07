@@ -72,8 +72,12 @@
 
   .content-loading {
     @include flex-content(row, center, center);
-    @include animation(spin, 3s, linear, infinite);
-    font-size: 5rem;
+
+    i {
+      font-size: 5rem;
+      margin: 0 auto;
+      @include animation(spin, 3s, linear, infinite);
+    }
   }
 
   .ItemSearchComic {
@@ -83,12 +87,11 @@
   @include breakpoint(desktop) {
     .ItemSearchComic {
       width: 33%;
+      float: left;
     }
 
     .container-search {
       height: 80%;
-      @include flex-content(row, flex-start, flex-start);
-      @include flex-wrap(wrap);
     }
   }
 }

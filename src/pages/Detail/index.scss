@@ -85,8 +85,13 @@
     }
 
     .content-right {
-      height: auto;
+      h1 {
+        width: 70%;
+      }
+
+      height: 86%;
       @include flex-content(row, flex-start, space-between);
+      align-content: flex-start;
       @include flex-wrap(wrap);
 
       .content-body {
