@@ -3,17 +3,33 @@
 @import '../../theme/variables';
 
 .Header {
+  @include flex-content(row, center, center);
+
   .col {
-    width: 33.3%;
-    text-align: center;
+    box-sizing: border-box;
+
+    &__center {
+      text-align: center;
+      width: 50%;
+    }
+
+    &__left {
+      width: 25%;
+      text-align: left;
+      padding-left: 5%;
+    }
+
+    &__right {
+      width: 25%;
+      text-align: right;
+      padding-right: 5%;
+    }
 
     i {
       font-size: 2rem;
       color: $c-dark;
     }
   }
-
-  @include flex-content(row, center, center);
 
   img {
     width: 50%;
@@ -22,7 +38,7 @@
   &--mini {
     img {
       width: 173px;
-      width: 45%;
+      width: 100%;
     }
   }
 }
@@ -31,7 +47,7 @@
   .Header {
     &--mini {
       img {
-        width: 20%;
+        width: 50%;
       }
     }
   }

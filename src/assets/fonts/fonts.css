@@ -82,6 +82,10 @@
   content: '\e9bd';
 }
 
+.icon-back:before {
+  content: '\ea40';
+}
+
 .icon-filter:before {
   content: '\ea5b';
 }

@@ -4,7 +4,7 @@
 .Detail-page {
   position: relative;
   box-sizing: border-box;
-  padding: 3em 2em 0px 50px;
+  padding: 5em 2em 0px 40px;
   height: 87%;
   @include flex-content(row, flex-start, flex-start);
   align-content: flex-start;
@@ -80,6 +80,8 @@
   }
 
   @include breakpoint(desktop) {
+    padding: 2em 2em 0px 70px;
+
     .content-body {
       display: none;
     }
