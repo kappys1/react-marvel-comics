@@ -1,41 +1,42 @@
 @import '../../theme/mixins/flexbox';
+@import '../../theme/mixins/breakpoints';
 
 .Detail-page {
   position: relative;
   box-sizing: border-box;
-  padding: 0px 0 0px 50px;
-  padding-top: 5em;
+  padding: 3em 2em 0px 50px;
+  height: 87%;
+  @include flex-content(row, flex-start, flex-start);
+  align-content: flex-start;
+  @include flex-wrap(wrap);
 
-  .content-header {
+  .content-left {
     width: 100%;
-    height: 26%;
-    margin-bottom: 2%;
+    transition: width 0.3s ease-out;
+  }
 
-    @include flex-content(row, flex-start, flex-start);
+  .content-right {
+    width: 0%;
+    padding: 0 2em;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.2s;
+    @include flex-content(column, flex-start, space-between);
 
-    .ItemComic {
-      transition: width 0.3s ease-out;
-    }
-
-    .content-right {
-      width: 66.6%;
-      height: 100%;
-      padding: 0 2em;
-      box-sizing: border-box;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      transition-delay: 0.2s;
-      @include flex-content(column, flex-start, space-between);
+    .content-body {
+      display: none;
     }
   }
 
   .content-body {
     margin-top: 4%;
-    height: 57%;
+    max-height: 70%;
     overflow: auto;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     transition-delay: 0.2s;
+    @include flex-content(column, flex-start, flex-start);
 
     .label {
       text-transform: capitalize;
@@ -55,8 +56,16 @@
   }
 
   &.animate {
+    .content-left {
+      width: 33%;
+    }
+
+    .content-right {
+      width: 66%;
+    }
+
     .ItemComic {
-      width: 33.3%;
+      width: 100%;
 
       .text-body,
       h1 {
@@ -67,6 +76,22 @@
     .content-body,
     .content-right {
       opacity: 1;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    .content-body {
+      display: none;
+    }
+
+    .content-right {
+      height: auto;
+      @include flex-content(row, flex-start, space-between);
+      @include flex-wrap(wrap);
+
+      .content-body {
+        display: block;
+      }
     }
   }
 }

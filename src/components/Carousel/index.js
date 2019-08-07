@@ -10,6 +10,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   const speedTransition = 700;
   const [swiper, setSwiper] = useState();
   const [currentSlide, setCurrentSlide] = useState(initSlide);
+  const [enterAnimation, setEnterAnimation] = useState('');
   const carouselItems = items.items.map((val, i) => {
     return (
       <div className="carousel-slide" key={i}>
@@ -21,6 +22,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   useEffect(() => {
     console.log(swiper);
     if (swiper) {
+      setTimeout(() => setEnterAnimation('animate'), 100);
       swiper.on('slideChange', handleSlideChange);
     }
   }, [swiper]);
@@ -48,24 +50,20 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   };
 
   const settings = {
-    effect: 'coverflow',
     grabCursor: false,
-    centeredSlides: true,
     slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 50,
     initialSlide: currentSlide,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false
-    },
-    shouldSwiperUpdate: true,
-    lazy: true
+    shouldSwiperUpdate: true
   };
 
   return (
-    <Swiper {...settings} getSwiper={setSwiper}>
+    <Swiper
+      containerClass={`swiper-container ${enterAnimation}`}
+      {...settings}
+      getSwiper={setSwiper}
+    >
       {carouselItems}
     </Swiper>
   );

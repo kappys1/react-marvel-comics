@@ -1,3 +1,4 @@
+@import '../../theme/mixins/breakpoints';
 @import '../../theme/mixins/flexbox';
 @import '../../theme/variables';
 
@@ -15,12 +16,23 @@
   @include flex-content(row, center, center);
 
   img {
-    width: 282px;
+    width: 50%;
   }
 
   &--mini {
     img {
       width: 173px;
+      width: 45%;
+    }
+  }
+}
+
+@include breakpoint(desktop) {
+  .Header {
+    &--mini {
+      img {
+        width: 20%;
+      }
     }
   }
 }

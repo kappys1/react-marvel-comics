@@ -10,6 +10,7 @@ import Detail from '../../pages/Detail';
 
 function Home({ comics, status }) {
   const dispatch = useDispatch();
+
   const [page, setPage] = useState(1);
   const [slide, setSlide] = useState(0);
   const { isShowing, toggle } = useSearch();
@@ -50,7 +51,7 @@ function Home({ comics, status }) {
   }, []);
 
   return (
-    <div className="page">
+    <div className={`page ${status.isInDetail ? 'page__detail' : 'page__home'}`}>
       <Header
         className="Header--mini"
         showBackButton={status.isInDetail}

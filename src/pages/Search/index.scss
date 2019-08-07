@@ -1,4 +1,5 @@
 @import '../../theme/mixins/flexbox';
+@import '../../theme/mixins/breakpoints';
 @import '../../theme/mixins/animations';
 @import '../../theme/variables';
 
@@ -33,6 +34,12 @@
   @include flex-content(row, center, flex-end);
   padding: 1.5rem 1.5rem 0.5rem 1.5rem;
 
+  button {
+    background: transparent;
+    outline: none;
+    border: 0;
+  }
+
   i {
     font-size: 3rem;
     color: white;
@@ -58,9 +65,11 @@
   }
 
   .no-content {
+    width: 100%;
     font-size: $fz-body;
     @include flex-content(row, center, center);
   }
+
   .content-loading {
     @include flex-content(row, center, center);
     @include animation(spin, 3s, linear, infinite);
@@ -69,5 +78,17 @@
 
   .ItemSearchComic {
     margin-bottom: 2em;
+  }
+
+  @include breakpoint(desktop) {
+    .ItemSearchComic {
+      width: 33%;
+    }
+
+    .container-search {
+      height: 80%;
+      @include flex-content(row, flex-start, flex-start);
+      @include flex-wrap(wrap);
+    }
   }
 }

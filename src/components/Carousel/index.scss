@@ -3,26 +3,40 @@
 
 .swiper-container {
   padding-top: 15%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+
+  &.animate {
+    opacity: 1;
+  }
+
+  .swiper-wrapper {
+    left: -8%;
+  }
 }
 
 .carousel-slide {
-  width: 40%;
-
-  // transform-origin: left top;
-  // transform-style: preserve-3d;
+  width: 65%;
 
   .ItemComic {
+    width: 100%;
     transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
     transform-origin: left top;
     transform-style: preserve-3d;
+
+    h1 {
+      transition: font-size 0.4s ease-in-out;
+    }
   }
 
   &:not(.swiper-slide-active) .ItemComic {
+    // &.swiper-slide-active~& .ItemComic {
     opacity: 0.4;
+    width: 50%;
 
     .text-body,
     h1 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -30,5 +44,17 @@
 @include breakpoint(desktop) {
   .swiper-container {
     padding-top: 3%;
+
+    .swiper-wrapper {
+      left: -30%;
+    }
+  }
+
+  .carousel-slide {
+    width: 22%;
+
+    .ItemComic {
+      margin: 0 auto;
+    }
   }
 }

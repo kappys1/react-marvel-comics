@@ -3,7 +3,11 @@
     font-size: $fz-sm;
 
     @include breakpoint(desktop) {
-      font-size: 1rem;
+      font-size: $fz-base;
+    }
+
+    @include breakpoint(large) {
+      font-size: $fz-lg;
     }
   }
 
@@ -59,4 +63,5 @@
     color: transparent;
   }
 }
+
 @include typography;

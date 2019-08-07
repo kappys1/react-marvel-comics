@@ -8,30 +8,34 @@ function Detail({ comic }) {
   const [enterAnimation, setEnterAnimation] = useState('');
 
   useEffect(() => {
-    setEnterAnimation('animate');
+    setTimeout(() => setEnterAnimation('animate'), 100);
   }, []);
 
+  const contentBody = (
+    <>
+      <div className="label white">Description</div>
+      <div className="text-body white">{comic.description}</div>
+      <div className="content-creators">
+        {comic.creators.map((val, i) => (
+          <div className="creator" key={i}>
+            <div className="label white creator__title">{val.role}</div>
+            <div className="text-body white creator__name">{val.name}</div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
   return comic ? (
-    <div className={`Detail-page page ${enterAnimation}`}>
-      <div className="content-header">
+    <div className={`Detail-page ${enterAnimation}`}>
+      <div className="content-left">
         <ItemComic comic={comic}></ItemComic>
-        <div className="content-right">
-          <h1 className="white">{comic.title}</h1>
-          <div className="label white">${comic.prices.price}</div>
-        </div>
       </div>
-      <div className="content-body">
-        <div className="label white">Description</div>
-        <div className="text-body white">{comic.description}</div>
-        <div className="content-creators">
-          {comic.creators.map((val, i) => (
-            <div className="creator" key={i}>
-              <div className="label white creator__title">{val.role}</div>
-              <div className="text-body white creator__name">{val.name}</div>
-            </div>
-          ))}
-        </div>
+      <div className="content-right">
+        <h1 className="white">{comic.title}</h1>
+        <div className="label white">$ {comic.prices.price}</div>
+        <div className="content-body">{contentBody}</div>
       </div>
+      <div className="content-body">{contentBody}</div>
     </div>
   ) : (
     ''

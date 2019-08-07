@@ -1,35 +1,15 @@
-@import '../../theme/mixins/breakpoints';
-
-$sz-comic: 65vw;
-$sz-comic-no-active: 40vw;
-$sz-comic-lg: 20vw;
-$sz-comic-no-active-lg: 14vw;
-
-// .swiper-wrapper {
-//   .ItemComic {
-//     width: $sz-comic;
-//     transition: width 0.7s ease-in-out, opacity 0.7s ease-in-out;
-//     transform-origin: left top;
-//     transform-style: preserve-3d;
-
-//     .text-body,
-//     h1 {
-//       font-size: auto;
-//       transition: font-size 0.7s ease-in-out;
-//     }
-//   }
-
-//   .ItemComic:not(.swiper-slide-active) {
-//     opacity: 0.4;
-
-//     .text-body,
-//     h1 {
-//       font-size: 1.4rem;
-//     }
-//   }
-
-// }
+@import '../../theme/variables';
 
 .Header {
   padding-top: 2rem;
+}
+
+.page {
+  background-image: url('../../assets/images/background2.png');
+  background-size: 100% 100%;
+  transition: background-image 1s ease-in-out, opacity 0.3s ease-in-out;
+
+  &__detail {
+    background-image: url('../../assets/images/background.png');
+  }
 }
