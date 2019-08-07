@@ -5,48 +5,30 @@ $sz-comic-no-active: 40vw;
 $sz-comic-lg: 20vw;
 $sz-comic-no-active-lg: 14vw;
 
-.slick-list {
-  .ItemComic {
-    width: 100%;
-    transition: width 0.7s ease-in-out, opacity 0.7s ease-in-out;
-    transform-origin: left top;
-    transform-style: preserve-3d;
+// .swiper-wrapper {
+//   .ItemComic {
+//     width: $sz-comic;
+//     transition: width 0.7s ease-in-out, opacity 0.7s ease-in-out;
+//     transform-origin: left top;
+//     transform-style: preserve-3d;
 
-    .text-body,
-    h1 {
-      font-size: auto;
-      transition: font-size 0.7s ease-in-out;
-    }
-  }
+//     .text-body,
+//     h1 {
+//       font-size: auto;
+//       transition: font-size 0.7s ease-in-out;
+//     }
+//   }
 
-  .ItemComic:not(.active) {
-    width: $sz-comic-no-active;
-    opacity: 0.4;
-    .text-body,
-    h1 {
-      font-size: 1.4rem;
-    }
-  }
+//   .ItemComic:not(.swiper-slide-active) {
+//     opacity: 0.4;
 
-  .slick-slide {
-    padding: 2rem;
-    width: $sz-comic;
-    box-sizing: content-box;
-  }
+//     .text-body,
+//     h1 {
+//       font-size: 1.4rem;
+//     }
+//   }
 
-  @include breakpoint(desktop) {
-    .ItemComic {
-      margin: auto;
-    }
-    .slick-slide {
-      width: $sz-comic-lg;
-    }
-
-    .ItemComic:not(.active) {
-      width: $sz-comic-no-active-lg;
-    }
-  }
-}
+// }
 
 .Header {
   padding-top: 2rem;

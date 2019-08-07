@@ -2,7 +2,7 @@
 @import '../../theme/mixins/breakpoints';
 
 .ItemComic {
-  width: 100%;
+  display: block;
 
   &__image {
     width: 100%;
