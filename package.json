@@ -1,7 +1,13 @@
 {
   "name": "react-marvel-comics",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
+  "author": "alex marcos <alexsbd1@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kappys1/react-marvel-comics.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "react": "^16.8.6",
@@ -9,18 +15,19 @@
     "react-id-swiper": "^2.3.2",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
-    "react-slick": "^0.24.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "slick-carousel": "^1.8.1",
     "swiper": "^4.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp .env build/.env",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once",
+    "deploy-gh": "sh ./tools/gh-pages-publish.sh",
     "prettier": "eslint"
   },
   "husky": {
@@ -70,6 +77,8 @@
     "husky": "^3.0.2",
     "lint-staged": "^9.2.1",
     "node-sass": "^4.12.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "semantic-release": "git+https://github.com/semantic-release/semantic-release.git",
+    "travis-deploy-once": "^5.0.11"
   }
 }
