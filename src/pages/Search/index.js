@@ -19,12 +19,12 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
     if (listRef.current) {
       setListRef(listRef);
     }
-  }, [isShowing]);
+  }, [isShowing, setListRef]);
 
   useEffect(() => {
     console.log('finish');
     setIsFetching(false);
-  }, [comicsFilter.items]);
+  }, [comicsFilter.items, setIsFetching]);
 
   const handleChangeInput = name => {
     if (name.length >= 3) {

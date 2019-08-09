@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './index.scss';
-import logo from '../../assets/images/logo.png';
 
 function SearchBar({ value, className, onClickSearch, onChangeInput }) {
   const [name, setName] = useState(value);

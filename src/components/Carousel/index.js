@@ -23,10 +23,14 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     if (onSlideChange) {
       onSlideChange(currentSlide);
     }
-  }, [currentSlide]);
+  }, [currentSlide, onSlideChange]);
 
   useEffect(() => {
-    console.log(swiper);
+    const handleSlideChange = () => {
+      const next = swiper.activeIndex;
+      setCurrentSlide(next);
+    };
+
     if (swiper) {
       setTimeout(() => setEnterAnimation('animate'), 100);
       swiper.on('slideChange', handleSlideChange);
@@ -45,11 +49,6 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
       setTimeout(() => onClickItemComic(comic), speedTransition);
     }
     setCurrentSlide(i);
-  };
-
-  const handleSlideChange = () => {
-    const next = swiper.activeIndex;
-    setCurrentSlide(next);
   };
 
   const settings = {

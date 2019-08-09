@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { selectComic } from '../../modules/catalog/actions';
 import './index.scss';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import ItemComic from '../../components/ItemComic';
 
 function Detail({ comic }) {
