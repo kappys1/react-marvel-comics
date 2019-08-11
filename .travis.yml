@@ -38,5 +38,5 @@ jobs:
       script: if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
       run travis-deploy-once "npm run semantic-release"; fi
 branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  only:
+    - master
