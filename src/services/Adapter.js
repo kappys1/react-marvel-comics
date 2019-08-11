@@ -7,7 +7,7 @@ class Adapter {
       thumbnail: `${data.thumbnail.path.replace('http', 'https')}/portrait_uncanny.${
         data.thumbnail.extension
       }`,
-      prices: data.prices.filter(v => v.type === 'printPrice')[0],
+      price: data.prices.filter(v => v.type === 'printPrice')[0].price || '??',
       dates: data.dates.filter(v => v.type === 'onsaleDate')[0],
       creators: data.creators.items.map(creator => {
         return {

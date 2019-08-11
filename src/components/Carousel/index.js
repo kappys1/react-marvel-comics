@@ -71,4 +71,8 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   );
 }
 
+Carousel.defaultProps = {
+  items: { items: [] }
+};
+
 export default Carousel;

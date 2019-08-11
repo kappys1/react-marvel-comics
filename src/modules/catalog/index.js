@@ -7,7 +7,15 @@ const INITIAL_STATE = {
     isInDetail: false,
     isNewSearch: false
   },
-  comicDetail: {},
+  comicDetail: {
+    id: -1,
+    title: '',
+    description: '',
+    thumbnail: '',
+    price: '',
+    dates: {},
+    creators: []
+  },
   comics: {
     hasMore: true,
     items: [],

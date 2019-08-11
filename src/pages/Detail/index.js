@@ -31,7 +31,7 @@ function Detail({ comic }) {
       </div>
       <div className="content-right">
         <h1 className="white">{comic.title}</h1>
-        <div className="label white">$ {comic.prices.price}</div>
+        <div className="label white">$ {comic.price}</div>
         <div className="content-body">{contentBody}</div>
       </div>
       <div className="content-body">{contentBody}</div>

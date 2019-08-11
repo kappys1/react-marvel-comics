@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 
-function ItemSearchComic({ comic, onClick }) {
+function ItemSearchComic({ comic = {}, onClick }) {
   const handleClick = () => (onClick ? onClick(comic) : null);
   return (
     <div className="ItemSearchComic" onClick={handleClick}>
@@ -13,5 +13,9 @@ function ItemSearchComic({ comic, onClick }) {
     </div>
   );
 }
+
+ItemSearchComic.defaultProps = {
+  comic: {}
+};
 
 export default ItemSearchComic;
