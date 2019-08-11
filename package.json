@@ -8,6 +8,7 @@
     "url": "https://github.com/kappys1/react-marvel-comics.git"
   },
   "license": "MIT",
+  "homepage": "https://kappys1.github.io/react-marvel-comics/",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "react": "^16.8.6",
@@ -28,7 +29,6 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "predeploy": "npm run build",
-    "deploy-gh": "gh-pages -d build",
     "prettier": "eslint"
   },
   "husky": {

@@ -5,15 +5,14 @@ cache:
 notifications:
   email: false
 node_js:
-- '10'
-- '11'
-- '8'
+- 'stable'
 script:
+- npm install
 - npm run build
 after_success:
 - npm run travis-deploy-once "npm run report-coverage"
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
-  run travis-deploy-once "npm run deploy-gh"; fi
+# - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
+#   run travis-deploy-once "npm run deploy-gh"; fi
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
   run travis-deploy-once "npm run semantic-release"; fi
 branches:
@@ -26,3 +25,12 @@ deploy:
   app: react-marvel-comics
   on:
     repo: kappys1/react-marvel-comics
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  local_dir: build
+  on:
+    branch: master
