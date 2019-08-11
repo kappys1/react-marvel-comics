@@ -13,9 +13,9 @@ jobs:
     - stage: build
       script: npm run build
     - stage: "deploy GH-PAGES"
-      script: skip
       deploy: &pages
         provider: pages
+        script: skip
         skip_cleanup: true
         github_token: $GH_TOKEN # Set in the settings page of your repository, as a secure variable
         keep_history: true
@@ -23,7 +23,6 @@ jobs:
         on:
           branch: master
     - stage: "deploy heroku"
-      script: skip
       deploy: &heroku
         provider: heroku
         skip_cleanup: true # Don't re-run the tests
