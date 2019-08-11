@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.4cf02803.chunk.css",
-    "main.js": "/static/js/main.4f3021dd.chunk.js",
-    "main.js.map": "/static/js/main.4f3021dd.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.194b9cb8.chunk.css": "/static/css/2.194b9cb8.chunk.css",
-    "static/js/2.e8d0a926.chunk.js": "/static/js/2.e8d0a926.chunk.js",
-    "static/js/2.e8d0a926.chunk.js.map": "/static/js/2.e8d0a926.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.3ee45afb33ca040ccffac9f9a4073fc2.js": "/precache-manifest.3ee45afb33ca040ccffac9f9a4073fc2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.194b9cb8.chunk.css.map": "/static/css/2.194b9cb8.chunk.css.map",
-    "static/css/main.4cf02803.chunk.css.map": "/static/css/main.4cf02803.chunk.css.map",
-    "static/media/index.scss": "/static/media/icomoon.d3e5fcc4.eot",
-    "static/media/logo.png": "/static/media/logo.ee0b56fe.png"
+    "main.css": "/react-marvel-comics/static/css/main.3ee12b0b.chunk.css",
+    "main.js": "/react-marvel-comics/static/js/main.d9a94d8c.chunk.js",
+    "main.js.map": "/react-marvel-comics/static/js/main.d9a94d8c.chunk.js.map",
+    "runtime~main.js": "/react-marvel-comics/static/js/runtime~main.98fea0fe.js",
+    "runtime~main.js.map": "/react-marvel-comics/static/js/runtime~main.98fea0fe.js.map",
+    "static/css/2.7d2f61d3.chunk.css": "/react-marvel-comics/static/css/2.7d2f61d3.chunk.css",
+    "static/js/2.82068186.chunk.js": "/react-marvel-comics/static/js/2.82068186.chunk.js",
+    "static/js/2.82068186.chunk.js.map": "/react-marvel-comics/static/js/2.82068186.chunk.js.map",
+    "index.html": "/react-marvel-comics/index.html",
+    "precache-manifest.6ee903915fc2a2ff9e392a9dea58a288.js": "/react-marvel-comics/precache-manifest.6ee903915fc2a2ff9e392a9dea58a288.js",
+    "service-worker.js": "/react-marvel-comics/service-worker.js",
+    "static/css/2.7d2f61d3.chunk.css.map": "/react-marvel-comics/static/css/2.7d2f61d3.chunk.css.map",
+    "static/css/main.3ee12b0b.chunk.css.map": "/react-marvel-comics/static/css/main.3ee12b0b.chunk.css.map",
+    "static/media/index.scss": "/react-marvel-comics/static/media/icomoon.d3e5fcc4.eot",
+    "static/media/logo.png": "/react-marvel-comics/static/media/logo.ee0b56fe.png"
   }
 }
