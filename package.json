@@ -79,7 +79,7 @@
     "lint-staged": "^9.2.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
-    "semantic-release": "git+https://github.com/semantic-release/semantic-release.git",
+    "semantic-release": "^15.13.19",
     "travis-deploy-once": "^5.0.11"
   }
 }
