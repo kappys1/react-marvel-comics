@@ -3,6 +3,7 @@ cache:
   directories:
     - "~/.npm"
     - node_modules #Cache node_modules for faster builds
+    - build #Cache node_modules for faster builds
 notifications:
   email: false
 node_js:
@@ -15,7 +16,6 @@ jobs:
       script: npm run build
     - stage: "deploy GH-PAGES"
       script: skip
-      install: skip
       deploy: &pages
         provider: pages
         skip_cleanup: true
@@ -26,7 +26,6 @@ jobs:
           branch: master
     - stage: "deploy heroku"
       script: skip
-      install: skip
       deploy: &heroku
         provider: heroku
         skip_cleanup: true # Don't re-run the tests
