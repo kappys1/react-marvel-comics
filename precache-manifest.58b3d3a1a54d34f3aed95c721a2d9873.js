@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e17a78bd6abe8f4392d3c8e07c372881",
+    "revision": "c9780c0f5ec3481c28e5dd76cbbf5e02",
     "url": "/react-marvel-comics/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-marvel-comics/static/css/2.7d2f61d3.chunk.css"
   },
   {
-    "revision": "f8b77a482939628952a7",
-    "url": "/react-marvel-comics/static/css/main.3ee12b0b.chunk.css"
+    "revision": "170371164894f9efa35f",
+    "url": "/react-marvel-comics/static/css/main.36ee91b4.chunk.css"
   },
   {
     "revision": "6fccb6f5490359f28d3d",
     "url": "/react-marvel-comics/static/js/2.82068186.chunk.js"
   },
   {
-    "revision": "f8b77a482939628952a7",
+    "revision": "170371164894f9efa35f",
     "url": "/react-marvel-comics/static/js/main.d9a94d8c.chunk.js"
   },
   {

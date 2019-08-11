@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-marvel-comics/static/css/main.3ee12b0b.chunk.css",
+    "main.css": "/react-marvel-comics/static/css/main.36ee91b4.chunk.css",
     "main.js": "/react-marvel-comics/static/js/main.d9a94d8c.chunk.js",
     "main.js.map": "/react-marvel-comics/static/js/main.d9a94d8c.chunk.js.map",
     "runtime~main.js": "/react-marvel-comics/static/js/runtime~main.98fea0fe.js",
@@ -9,10 +9,10 @@
     "static/js/2.82068186.chunk.js": "/react-marvel-comics/static/js/2.82068186.chunk.js",
     "static/js/2.82068186.chunk.js.map": "/react-marvel-comics/static/js/2.82068186.chunk.js.map",
     "index.html": "/react-marvel-comics/index.html",
-    "precache-manifest.6ee903915fc2a2ff9e392a9dea58a288.js": "/react-marvel-comics/precache-manifest.6ee903915fc2a2ff9e392a9dea58a288.js",
+    "precache-manifest.58b3d3a1a54d34f3aed95c721a2d9873.js": "/react-marvel-comics/precache-manifest.58b3d3a1a54d34f3aed95c721a2d9873.js",
     "service-worker.js": "/react-marvel-comics/service-worker.js",
     "static/css/2.7d2f61d3.chunk.css.map": "/react-marvel-comics/static/css/2.7d2f61d3.chunk.css.map",
-    "static/css/main.3ee12b0b.chunk.css.map": "/react-marvel-comics/static/css/main.3ee12b0b.chunk.css.map",
+    "static/css/main.36ee91b4.chunk.css.map": "/react-marvel-comics/static/css/main.36ee91b4.chunk.css.map",
     "static/media/index.scss": "/react-marvel-comics/static/media/icomoon.d3e5fcc4.eot",
     "static/media/logo.png": "/react-marvel-comics/static/media/logo.ee0b56fe.png"
   }
