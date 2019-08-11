@@ -35,8 +35,8 @@ jobs:
         on:
           repo: kappys1/react-marvel-comics
     - stage: "semantic release"
-      script: if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm
-      run travis-deploy-once "npm run semantic-release"; fi
+      script:
+        - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run semantic-release"; fi
 branches:
   only:
     - master
