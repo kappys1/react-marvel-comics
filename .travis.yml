@@ -8,10 +8,10 @@ notifications:
   email: false
 node_js:
   - "stable"
-install:
-  - npm install
 jobs:
   include:
+    - stage: install dependencies
+      script: npm install
     - stage: test
       script: npm run test
     - stage: build

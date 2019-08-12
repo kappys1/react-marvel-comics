@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from '../../components/SearchBar';
