@@ -7,7 +7,7 @@ class Adapter {
       thumbnail: `${data.thumbnail.path.replace('http', 'https')}/portrait_uncanny.${
         data.thumbnail.extension
       }`,
-      thumbnail_small: `${data.thumbnail.path.replace('http', 'https')}/portrait_small.${
+      thumbnail_small: `${data.thumbnail.path.replace('http', 'https')}/portrait_medium.${
         data.thumbnail.extension
       }`,
       price: data.prices.filter(v => v.type === 'printPrice')[0].price || '??',

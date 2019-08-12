@@ -50,7 +50,7 @@ Una vez terminado con Sketch, pase el diseño a [Zeplin](https://zeplin.io/) ya 
 
 ### ⌨️ Codificacion
 
-sabiendo que algunas cosas son mejorables, pero se ha intentado demostar la utilización de Redux y React Hooks, funcionalidad muy extendida en la comunidad react y otra bastante nueva.
+Sabiendo que algunas cosas son mejorables, se ha intentado demostar la utilización de Redux y React Hooks, funcionalidad muy extendida en la comunidad react y otra bastante nueva.
 A su vez se ha intentado mostrar buenas practicas a la hora de consumir la API mediante paginación y la preparación para su filtrado y ordenado entre otras.
 
 ### ⚒️ CI/CD

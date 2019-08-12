@@ -29,7 +29,6 @@
 
   @include breakpoint(desktop) {
     &__image {
-      max-width: 150px;
       box-shadow: 6px 6px 20px 0 #000000;
     }
   }
