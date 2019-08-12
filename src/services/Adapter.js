@@ -4,6 +4,7 @@ class Adapter {
       id: data.id,
       title: data.title,
       description: data.description,
+      pages: data.pageCount,
       thumbnail: `${data.thumbnail.path.replace('http', 'https')}/portrait_uncanny.${
         data.thumbnail.extension
       }`,

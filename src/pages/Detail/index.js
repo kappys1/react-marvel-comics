@@ -12,6 +12,8 @@ function Detail({ comic }) {
 
   const contentBody = (
     <>
+      <div></div>
+      {/* <div className="label__pages label white"></div> */}
       <div className="label white">Description</div>
       <div className="text-body white">{comic.description}</div>
       <div className="content-creators">
@@ -31,7 +33,9 @@ function Detail({ comic }) {
       </div>
       <div className="content-right">
         <h1 className="white">{comic.title}</h1>
-        <div className="label white">$ {comic.price}</div>
+        <div className="label white">
+          $ {comic.price} - {comic.pages} Pages
+        </div>
         <div className="content-body">{contentBody}</div>
       </div>
       <div className="content-body">{contentBody}</div>
