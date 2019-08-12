@@ -31,6 +31,10 @@
     transition-delay: 0.2s;
     @include flex-content(column, flex-start, space-between);
 
+    h1 {
+      margin-bottom: 20%;
+    }
+
     .content-body {
       display: none;
     }
@@ -91,6 +95,7 @@
 
       h1 {
         width: 70%;
+        margin: 0;
       }
 
       height: 79%;

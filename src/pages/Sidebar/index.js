@@ -33,14 +33,14 @@ function Sidebar({ comics, status }) {
     if (item.value === order.name) {
       icon =
         order.type === 'asc' ? (
-          <i className="icon-cheveron-up"></i>
-        ) : (
           <i className="icon-cheveron-down"></i>
+        ) : (
+          <i className="icon-cheveron-up"></i>
         );
     }
     return (
       <div className="text-body" key={i} onClick={() => handleClickOrder(item.value)}>
-        <span>{item.name}</span>
+        {item.name}
         {icon}
       </div>
     );
