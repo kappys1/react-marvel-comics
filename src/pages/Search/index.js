@@ -19,12 +19,12 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
     if (listRef.current) {
       setListRef(listRef);
     }
-  }, [isShowing, setListRef]);
+  }, [isShowing]);
 
   useEffect(() => {
     console.log('finish');
     setIsFetching(false);
-  }, [setIsFetching]);
+  }, [comicsFilter.items]);
 
   const handleChangeInput = name => {
     if (name.length >= 3) {
@@ -50,9 +50,16 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
 
   const comicsSearchItems = () => {
     if (comicsFilter.items.length) {
-      return comicsFilter.items.map((val, i) => (
-        <ItemSearchComic onClick={() => handleClickItem(val)} key={i} comic={val}></ItemSearchComic>
-      ));
+      return comicsFilter.items.map((val, i) => {
+        const comic = { image: val.thumbnail_small, title: val.title, id: val.id };
+        return (
+          <ItemSearchComic
+            onClick={() => handleClickItem(val)}
+            key={i}
+            comic={comic}
+          ></ItemSearchComic>
+        );
+      });
     } else {
       return <div className="no-content">No results</div>;
     }

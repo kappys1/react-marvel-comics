@@ -20,7 +20,7 @@ function Home({ comics, status }) {
   };
 
   const handleSlidePage = actualSlide => {
-    const thresholdUpdate = 2;
+    const thresholdUpdate = 4;
     if (actualSlide + thresholdUpdate >= comics.items.length && !status.isLoading) {
       setPage(page + 1);
       loadPage();
