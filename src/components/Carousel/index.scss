@@ -4,7 +4,7 @@
 .swiper-container {
   padding-top: 15%;
   transition: opacity 0.7s ease-in-out;
-  transition-delay: 0.3s;
+  // transition-delay: 0.1s;
   opacity: 0;
 
   &.animate {
@@ -24,10 +24,14 @@
     transition: width 0.7s ease-in-out, opacity 0.7s ease-in-out;
     transform-origin: left top;
     transform-style: preserve-3d;
-
+    opacity: 0;
     h1 {
       transition: font-size 0.4s ease-in-out;
     }
+  }
+
+  &.swiper-slide-active .ItemComic {
+    opacity: 1;
   }
 
   &:not(.swiper-slide-active) .ItemComic {

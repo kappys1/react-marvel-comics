@@ -20,7 +20,7 @@ function SearchBar({ value, className, onClickSearch, onChangeInput }) {
   };
 
   return (
-    <div className={`SearchBar`}>
+    <div className={`SearchBar ${className}`}>
       <form onSubmit={handleSubmit}>
         <label>
           <input

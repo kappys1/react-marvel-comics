@@ -13,7 +13,11 @@ function ItemComic({ comic, onClick, className }) {
 }
 
 ItemComic.defaultProps = {
-  comic: {},
+  comic: {
+    thumbnail: '',
+    title: '',
+    price: '??'
+  },
   className: ''
 };
 

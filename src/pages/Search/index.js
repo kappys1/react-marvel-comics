@@ -22,7 +22,6 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
   }, [isShowing]);
 
   useEffect(() => {
-    console.log('finish');
     setIsFetching(false);
   }, [comicsFilter.items]);
 
@@ -37,7 +36,6 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
   function handleScroll() {
     if (comicsFilter.hasMore) {
       setPage(page + 1);
-      console.log(page);
       dispatch(filterResults(page + 1, name));
     }
   }
@@ -97,7 +95,7 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
                     </div>
                   )}
                   {isFetching ? (
-                    <div>
+                    <div className="content-loading content-loading--small">
                       <i className="icon-loading"></i>
                     </div>
                   ) : (

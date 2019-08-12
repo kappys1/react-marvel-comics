@@ -5,6 +5,7 @@ import 'react-id-swiper/lib/styles/scss/swiper.scss';
 import Swiper from 'react-id-swiper';
 import ItemComic from '../../components/ItemComic';
 import './index.scss';
+import { compose } from '../../../../../Library/Caches/typescript/3.5/node_modules/redux';
 
 function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   const speedTransition = 700;
@@ -32,7 +33,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     };
 
     if (swiper) {
-      setTimeout(() => setEnterAnimation('animate'), 500);
+      setTimeout(() => setEnterAnimation('animate'), 700);
       swiper.on('slideChange', handleSlideChange);
     }
   }, [swiper]);
