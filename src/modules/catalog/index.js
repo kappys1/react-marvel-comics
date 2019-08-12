@@ -18,6 +18,8 @@ const INITIAL_STATE = {
   },
   comics: {
     hasMore: true,
+    page: 1,
+    orderBy: '',
     items: [],
     original: [],
     count: 12,
@@ -57,7 +59,12 @@ export default (state = INITIAL_STATE, action) => {
           ...state.comics,
           total: action.total,
           hasMore: action.hasMore,
-          items: state.comics.items.concat(action.comics),
+          page: action.page,
+          orderBy: action.orderBy,
+          items:
+            action.orderBy !== state.comics.orderBy
+              ? action.comics
+              : state.comics.items.concat(action.comics),
           original: state.comics.items
         }
       };

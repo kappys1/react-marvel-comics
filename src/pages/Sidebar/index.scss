@@ -1,0 +1,33 @@
+@import '../../theme/variables';
+@import '../../theme/mixins/breakpoints';
+@import '../../theme/mixins/animations';
+@import '../../theme/mixins/flexbox';
+
+.sidebar {
+  padding: 5rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .text-body {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .content-loading {
+    margin-top: 20%;
+    display: none;
+
+    &.show {
+      @include flex-content(row, center, center);
+    }
+
+    i {
+      font-size: 3rem;
+      margin: 0 auto;
+      @include animation(spin, 3s, linear, infinite);
+    }
+  }
+}

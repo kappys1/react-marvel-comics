@@ -27,7 +27,7 @@ REACT_APP_API_PRIVATE_KEY=
 
 - [x] Listado
   - [x] Mostrar titulo
-  - [ ] Ordenar (in Progress🔄)
+  - [x] Ordenar (Sidebar)
   - [x] Filtrar (Pagina de busqueda)
 - [x] Detail Page
 

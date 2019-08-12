@@ -21,6 +21,9 @@ class MarvelApI {
     if (options.titleStartsWith) {
       params = params.concat(`&titleStartsWith=${options.titleStartsWith}`);
     }
+    if (options.orderBy) {
+      params = params.concat(`&orderBy=${options.orderBy}`);
+    }
     const url = `${baseUrl}${URI}${params}`;
 
     return fetch(url);

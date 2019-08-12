@@ -26,6 +26,13 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   }, [currentSlide, onSlideChange]);
 
   useEffect(() => {
+    console.log(items, currentSlide);
+    if (swiper) {
+      swiper.slideTo(0, 0);
+    }
+  }, [items.orderBy]);
+
+  useEffect(() => {
     const handleSlideChange = () => {
       const next = swiper.activeIndex;
       setCurrentSlide(next);

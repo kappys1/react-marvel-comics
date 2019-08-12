@@ -66,6 +66,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cheveron-down:before {
+  content: '\e900';
+}
+
+.icon-cheveron-up:before {
+  content: '\e901';
+}
+
 .icon-close:before {
   content: '\e90c';
 }
