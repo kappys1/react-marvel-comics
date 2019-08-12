@@ -24,7 +24,7 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
   useEffect(() => {
     console.log('finish');
     setIsFetching(false);
-  }, [comicsFilter.items, setIsFetching]);
+  }, [setIsFetching]);
 
   const handleChangeInput = name => {
     if (name.length >= 3) {
