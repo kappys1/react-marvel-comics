@@ -26,10 +26,10 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   }, [currentSlide, onSlideChange]);
 
   useEffect(() => {
-    console.log(items, currentSlide);
     if (swiper) {
       swiper.slideTo(0, 0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.orderBy]);
 
   useEffect(() => {
