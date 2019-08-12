@@ -32,7 +32,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     };
 
     if (swiper) {
-      setTimeout(() => setEnterAnimation('animate'), 400);
+      setTimeout(() => setEnterAnimation('animate'), 500);
       swiper.on('slideChange', handleSlideChange);
     }
   }, [swiper]);
@@ -45,7 +45,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
         onClickItemComic(comic);
       }
     } else {
-      swiper.slideTo(i);
+      swiper.slideTo(i, 600);
       setTimeout(() => onClickItemComic(comic), speedTransition);
     }
     setCurrentSlide(i);
