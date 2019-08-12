@@ -15,6 +15,13 @@
     transition: width 0.3s ease-out;
   }
 
+  .ItemComic {
+    .text-body,
+    h1 {
+      display: none;
+    }
+  }
+
   .content-right {
     width: 0%;
     padding: 0 2em;
@@ -62,15 +69,6 @@
 
     .content-right {
       width: 66%;
-    }
-
-    .ItemComic {
-      width: 100%;
-
-      .text-body,
-      h1 {
-        display: none;
-      }
     }
 
     .content-body,

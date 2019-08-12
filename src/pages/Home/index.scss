@@ -1,7 +1,12 @@
 @import '../../theme/variables';
 
 .Header {
-  padding-top: 2rem;
+  padding-top: 15rem;
+
+  &--mini {
+    transition: padding 1s ease-in-out;
+    padding-top: 2rem;
+  }
 }
 
 .page {
@@ -11,5 +16,14 @@
 
   &__detail {
     background-image: url('../../assets/images/background.png');
+  }
+
+  .LoadingContent {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 }
