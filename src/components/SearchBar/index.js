@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.scss';
 
-function SearchBar({ value, className, onClickSearch, onChangeInput }) {
+function SearchBar({ value, placeholder, className, onClickSearch, onChangeInput }) {
   const [name, setName] = useState(value);
 
   const handleSubmit = e => {
@@ -28,7 +28,7 @@ function SearchBar({ value, className, onClickSearch, onChangeInput }) {
             type="text"
             value={name}
             onChange={handleChangeInput}
-            placeholder="Search ..."
+            placeholder={placeholder}
           />
         </label>
       </form>

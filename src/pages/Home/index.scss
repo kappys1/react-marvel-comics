@@ -26,4 +26,18 @@
     right: 0;
     text-align: center;
   }
+
+  .copyright {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+
+    &.detail {
+      opacity: 0;
+    }
+  }
 }

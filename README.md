@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Marvel Comics Catalog
+![ReactMarvel](./src/assets/images/logo.png)
 
-## Available Scripts
+> Esto es un simple ejemplo de como usar la API de marvel con redux para mostrar el listado de comics
 
-In the project directory, you can run:
+![licence](https://img.shields.io/badge/licence-MIT-blue.svg?style=flat)
+[![Build Status](https://travis-ci.org/kappys1/react-marvel-comics.svg?branch=master)](https://travis-ci.org/kappys1/react-marvel-comics)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Github Pages](https://kappys1.github.io/react-marvel-comics/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+[Heroku](https://react-marvel-comic.herokuapp.com/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### ❗ Importante ❗
 
-### `npm run build`
+La API de Marvel© limita a **3000 requests** por dia, si no funciona posiblemente es que se han acabado las peticiones diarias. Si deseas hacerlo funcionar en tu maquina, deberas cambiar [tus api keys](https://developer.marvel.com/documentation/getting_started) en las variables de entorno.
+***yo he dejado un archivo .env en la raiz donde podras cambiarlo, esta no es la mejor manera, pero esto es solo un ejemplo***
+```
+REACT_APP_API_PUBLIC_KEY=
+REACT_APP_API_PRIVATE_KEY=
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🗒️ Requisitos
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- [x] Listado
+  - [x] Mostrar titulo
+  - [ ] Ordenar (in Progress🔄)
+  - [x] Filtrar (Pagina de busqueda)
+- [x] Detail Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Bonus
 
-### `npm run eject`
+- [x] Mobile Support
+- [ ] Testing (in Progress🔄)
+- [x] User Interface
+- [x] Performance
+  - utilización de Suspense y Lazy en la carga inicial.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 👨🏻‍💻Descripción del Proceso
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 👨🏻‍🎨Diseño
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Esta aplicación ha sido pensada diseñada pensando en el concepto **Mobile first** con [Sketch](https://github.com/kappys1/react-marvel-comics/docs/sketch). Tiene como objetivo ser una SPA sin necesidad de utilización de React Router.
+Se ha creado un Styleguide acorde con el diseño de Marvel (rojo y blanco).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Una vez terminado con Sketch, pase el diseño a [Zeplin](https://zeplin.io/) ya que gracias a esta herramienta es mucho mas facil a la hora de maquetar.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ⌨️Codificacion
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+sabiendo que algunas cosas son mejorables, pero se ha intentado demostar la utilización de Redux y React Hooks, funcionalidad muy extendida en la comunidad react y otra bastante nueva.
+A su vez se ha intentado mostrar buenas practicas a la hora de consumir la API mediante paginación y la preparación para su filtrado y ordenado entre otras.
 
-### Code Splitting
+### ⚒️CI/CD
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Se ha implementado un pipeline mediante travis en el que se ejecuta diferentes *stages* como seria la realización de los test y build del proyecto para posteriormente hacer el deploy en github pages y heroku.
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Imagenes
 
-### Making a Progressive Web App
+![mobile home](./docs/images/mobile_home.png)
+![mobile search](./docs/images/mobile_search.png)
+![mobile detail](./docs/images/mobile_detail.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![desktop home](./docs/images/desktop_home.png)
+![desktop search](./docs/images/desktop_search.png)
+![desktop detail](./docs/images/desktop_detail.png)

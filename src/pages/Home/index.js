@@ -66,6 +66,9 @@ function Home({ comics, status }) {
         )}
         <Search onClickItem={handleClickItemSearch} isShowing={isShowing} hide={toggle} />
       </Suspense>
+      <div className={`text-body white copyright ${status.isInDetail ? 'detail' : ''}`}>
+        Data provided by Marvel © {new Date().getFullYear()}
+      </div>
     </div>
   );
 }

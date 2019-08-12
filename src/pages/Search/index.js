@@ -82,6 +82,7 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
               </div>
               <div className="modal-body">
                 <SearchBar
+                  placeholder="Search... Starts with. ex: Spider"
                   value={name}
                   onChangeInput={handleChangeInput}
                   onClickSearch={handleChangeInput}
