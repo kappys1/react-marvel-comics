@@ -10,7 +10,7 @@ function Detail({ comic }) {
     setTimeout(() => setEnterAnimation('animate'), 100);
   }, []);
 
-  const contentBody = (
+  const renderedContentBody = (
     <>
       <div></div>
       {/* <div className="label__pages label white"></div> */}
@@ -36,9 +36,9 @@ function Detail({ comic }) {
         <div className="label white">
           $ {comic.price} - {comic.pages} Pages
         </div>
-        <div className="content-body">{contentBody}</div>
+        <div className="content-body">{renderedContentBody}</div>
       </div>
-      <div className="content-body">{contentBody}</div>
+      <div className="content-body">{renderedContentBody}</div>
     </div>
   ) : (
     ''

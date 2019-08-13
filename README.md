@@ -39,6 +39,13 @@ REACT_APP_API_PRIVATE_KEY=
 - [x] Performance
   - utilización de Suspense y Lazy en la carga inicial.
 
+#### Interesante de implementar
+
+- [ ] Coverage en pipeline travis
+- [ ] service worker para cachear imagenes
+- [ ] Staging state en heroku para pasar a producción manualmente.
+- [ ] ¿algo mas?
+
 ## 👨🏻‍💻Descripción del Proceso
 
 ### 👨🏻‍🎨 Diseño

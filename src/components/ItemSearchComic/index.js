@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 function ItemSearchComic({ comic, onClick }) {
-  const handleClick = () => (onClick ? onClick(comic) : null);
+  const handleClick = () => onClick(comic);
   return (
     <div className="ItemSearchComic" onClick={handleClick}>
       <img className="ItemSearchComic__image" src={comic.image} alt="ItemComic" />
@@ -19,7 +19,8 @@ ItemSearchComic.defaultProps = {
     title: '',
     image: '',
     id: -1
-  }
+  },
+  onClick: comic => {}
 };
 
 export default ItemSearchComic;

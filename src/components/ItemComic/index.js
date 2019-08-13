@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 function ItemComic({ comic, onClick, className }) {
-  const handleClick = () => (onClick ? onClick(comic) : null);
+  const handleClick = () => onClick(comic);
   return (
     <div className={`ItemComic ${className}`} onClick={handleClick}>
       <img className="ItemComic__image" src={comic.thumbnail} alt="ItemComic" />
@@ -18,7 +18,8 @@ ItemComic.defaultProps = {
     title: '',
     price: '??'
   },
-  className: ''
+  className: '',
+  onClick: comic => {}
 };
 
 export default ItemComic;

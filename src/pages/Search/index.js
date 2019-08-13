@@ -50,12 +50,12 @@ const Search = ({ isShowing, hide, onClickItem, comicsFilter, status }) => {
   const comicsSearchItems = () => {
     if (comicsFilter.items.length) {
       return comicsFilter.items.map((val, i) => {
-        const comic = { image: val.thumbnail_small, title: val.title, id: val.id };
+        const comicParams = { image: val.thumbnail_small, title: val.title, id: val.id };
         return (
           <ItemSearchComic
             onClick={() => handleClickItem(val)}
             key={i}
-            comic={comic}
+            comic={comicParams}
           ></ItemSearchComic>
         );
       });

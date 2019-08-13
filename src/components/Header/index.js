@@ -18,4 +18,12 @@ function Header({ className, iconLeft, IconRight, onClickLeftIcon, onClickRightI
   );
 }
 
+Header.defaultProps = {
+  className: '',
+  iconLeft: '',
+  IconRight: '',
+  onClickLeftIcon: () => {},
+  onClickRightIcon: () => {}
+};
+
 export default Header;

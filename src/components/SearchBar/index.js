@@ -5,17 +5,13 @@ function SearchBar({ value, placeholder, className, onClickSearch, onChangeInput
   const [name, setName] = useState(value);
 
   const handleSubmit = e => {
+    onClickSearch(name);
     e.preventDefault();
-    if (onClickSearch) {
-      onClickSearch(name);
-    }
   };
 
   const handleChangeInput = e => {
     setName(e.target.value);
-    if (onChangeInput) {
-      onChangeInput(e.target.value);
-    }
+    onChangeInput(e.target.value);
     e.preventDefault();
   };
 
@@ -35,5 +31,13 @@ function SearchBar({ value, placeholder, className, onClickSearch, onChangeInput
     </div>
   );
 }
+
+SearchBar.defaultProps = {
+  value: '',
+  placeholder: '',
+  className: '',
+  onClickSearch: value => {},
+  onChangeInput: value => {}
+};
 
 export default SearchBar;

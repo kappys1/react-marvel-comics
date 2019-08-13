@@ -11,7 +11,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   const [swiper, setSwiper] = useState();
   const [currentSlide, setCurrentSlide] = useState(initSlide);
   const [enterAnimation, setEnterAnimation] = useState('');
-  const carouselItems = items.items.map((val, i) => {
+  const renderedCarouselItems = items.items.map((val, i) => {
     return (
       <div className="carousel-slide" key={i}>
         <ItemComic onClick={() => handleClickItemComic(val, i)} comic={val}></ItemComic>
@@ -20,9 +20,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   });
 
   useEffect(() => {
-    if (onSlideChange) {
-      onSlideChange(currentSlide);
-    }
+    onSlideChange(currentSlide);
   }, [currentSlide, onSlideChange]);
 
   useEffect(() => {
@@ -48,9 +46,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     const currentSlide = swiper.activeIndex;
     const current = items.items[currentSlide];
     if (comic.id === current.id) {
-      if (onClickItemComic) {
-        onClickItemComic(comic);
-      }
+      onClickItemComic(comic);
     } else {
       swiper.slideTo(i, 600);
       setTimeout(() => onClickItemComic(comic), speedTransition);
@@ -66,20 +62,22 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     initialSlide: currentSlide,
     shouldSwiperUpdate: true
   };
-
   return (
     <Swiper
       containerClass={`swiper-container ${enterAnimation}`}
       {...settings}
       getSwiper={setSwiper}
     >
-      {carouselItems}
+      {renderedCarouselItems}
     </Swiper>
   );
 }
 
 Carousel.defaultProps = {
-  items: { items: [] }
+  items: { items: [] },
+  initSlide: 1,
+  onClickItemComic: comic => {},
+  onSlideChange: slide => {}
 };
 
 export default Carousel;
