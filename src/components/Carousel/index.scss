@@ -19,7 +19,9 @@
 .carousel-slide {
   width: 65%;
 
-  .ItemComic {
+  // .ItemComic .blurred,
+  .ItemComic .ItemComic__image {
+    // .ItemComic {
     width: 100%;
     transition: width 0.7s ease-in-out, opacity 0.7s ease-in-out;
     transform-origin: left top;
@@ -31,11 +33,18 @@
     }
   }
 
-  &.swiper-slide-active .ItemComic {
+  // &.swiper-slide-active .ItemComic .blurred,
+  &.swiper-slide-active .ItemComic .ItemComic__image {
+    // &.swiper-slide-active .ItemComic {
     opacity: 1;
   }
 
-  &:not(.swiper-slide-active) .ItemComic {
+  // &:not(.swiper-slide-active) .ItemComic .blurred,
+  &:not(.swiper-slide-active) .ItemComic .blurred {
+  }
+
+  &:not(.swiper-slide-active) .ItemComic .ItemComic__image {
+    // &:not(.swiper-slide-active) .ItemComic {
     // &.swiper-slide-active~& .ItemComic {
     opacity: 0.4;
     width: 50%;

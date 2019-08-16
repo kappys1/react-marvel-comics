@@ -1,0 +1,34 @@
+@import '../../theme/mixins/breakpoints';
+@import '../../theme/mixins/flexbox';
+@import '../../theme/variables';
+
+figure {
+  position: relative;
+  margin: 0;
+
+  div.blurred {
+    position: absolute;
+    background-size: cover;
+    filter: blur(10px);
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    &.loaded {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+  }
+
+  img {
+    position: relative;
+    object-fit: cover;
+    transition: opacity 0.2s ease;
+    width: 100%;
+  }
+
+  img.loaded {
+    opacity: 1;
+  }
+}
