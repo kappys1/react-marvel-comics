@@ -33,10 +33,8 @@ function Image({ thumbnail, thumbnail_small, className }) {
 
 Image.defaultProps = {
   className: '',
-  iconLeft: '',
-  IconRight: '',
-  onClickLeftIcon: () => {},
-  onClickRightIcon: () => {}
+  thumbnail: '',
+  thumbnail_small: ''
 };
 
 export default Image;

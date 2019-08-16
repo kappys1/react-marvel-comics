@@ -37,7 +37,7 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
     };
 
     if (swiper) {
-      setTimeout(() => setEnterAnimation('animate'), 700);
+      setTimeout(() => setEnterAnimation('animate'), 100);
       swiper.on('slideChange', handleSlideChange);
     }
   }, [swiper]);
