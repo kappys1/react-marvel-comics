@@ -25,7 +25,7 @@
   }
 
   @include breakpoint(desktop) {
-    &__image {
+    &__image img {
       max-width: 400px;
     }
   }
