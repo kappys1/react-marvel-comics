@@ -5,7 +5,7 @@ function ItemSearchComic({ comic, onClick }) {
   const handleClick = () => onClick(comic);
   return (
     <div className="ItemSearchComic" onClick={handleClick}>
-      <img className="ItemSearchComic__image" src={comic.image} alt="ItemComic" />
+      <img className="ItemSearchComic__image" src={comic.thumbnail} alt="ItemComic" />
       <div className="ItemSearchComic__description">
         <h1 className="white">{comic.title}</h1>
         <div className="body white"></div>
@@ -17,7 +17,7 @@ function ItemSearchComic({ comic, onClick }) {
 ItemSearchComic.defaultProps = {
   comic: {
     title: '',
-    image: '',
+    thumbnail: '',
     id: -1
   },
   onClick: comic => {}
