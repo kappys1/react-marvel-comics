@@ -1,15 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { loadAllComics, selectComic } from '../../modules/catalog/actions';
+import { changeCurrentSlider } from '../../modules/carousel/actions';
 import 'swiper/dist/css/swiper.min.css';
 import 'react-id-swiper/lib/styles/scss/swiper.scss';
-
 import Swiper from 'react-id-swiper';
 import ItemComic from '../../components/ItemComic';
 import './index.scss';
 
-function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
+function Carousel({ items, history, currentSlide }) {
   const speedTransition = 700;
+  const dispatch = useDispatch();
   const [swiper, setSwiper] = useState();
-  const [currentSlide, setCurrentSlide] = useState(initSlide);
   const [enterAnimation, setEnterAnimation] = useState('');
   const renderedCarouselItems = items.items.map((val, i) => {
     return (
@@ -20,38 +23,51 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
   });
 
   useEffect(() => {
-    onSlideChange(currentSlide);
-  }, [currentSlide, onSlideChange]);
+    handleSlideChange();
+  }, [currentSlide]);
 
   useEffect(() => {
     if (swiper) {
       swiper.slideTo(0, 0);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.orderBy]);
 
   useEffect(() => {
-    const handleSlideChange = () => {
-      const next = swiper.activeIndex;
-      setCurrentSlide(next);
-    };
-
     if (swiper) {
-      setTimeout(() => setEnterAnimation('animate'), 100);
-      swiper.on('slideChange', handleSlideChange);
+      setEnterAnimation('animate');
+      swiper.on('slideChange', () => {
+        const actualSlide = swiper.activeIndex;
+        dispatch(changeCurrentSlider(actualSlide));
+      });
     }
   }, [swiper]);
+
+  const loadPage = () => {
+    dispatch(loadAllComics(items.page + 1, items.orderBy));
+  };
+
+  const goToDetail = comic => {
+    dispatch(selectComic(comic));
+    history.push('/detail');
+  };
+
+  const handleSlideChange = () => {
+    const thresholdUpdate = 4;
+    if (currentSlide + thresholdUpdate >= items.items.length && !items.isLoading) {
+      loadPage();
+    }
+  };
 
   const handleClickItemComic = (comic, i) => {
     const currentSlide = swiper.activeIndex;
     const current = items.items[currentSlide];
     if (comic.id === current.id) {
-      onClickItemComic(comic);
+      goToDetail(comic);
     } else {
       swiper.slideTo(i, 600);
-      setTimeout(() => onClickItemComic(comic), speedTransition);
+      setTimeout(() => goToDetail(comic), speedTransition);
     }
-    setCurrentSlide(i);
+    dispatch(changeCurrentSlider(i));
   };
 
   const settings = {
@@ -74,10 +90,20 @@ function Carousel({ items, initSlide, onSlideChange, onClickItemComic }) {
 }
 
 Carousel.defaultProps = {
-  items: { items: [] },
-  initSlide: 1,
-  onClickItemComic: comic => {},
-  onSlideChange: slide => {}
+  items: [],
+  currentSlide: 1
 };
 
-export default Carousel;
+const mapDispathToProps = {
+  changeCurrentSlider
+};
+
+const mapStateToProps = state => ({
+  items: state.catalog.comics,
+  currentSlide: state.carousel.currentSlide
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispathToProps
+)(Carousel);

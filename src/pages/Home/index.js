@@ -6,36 +6,20 @@ import Header from '../../components/Header';
 import SidebarElm from '../../pages/Sidebar';
 import useSearch from '../../pages/Search/useSearch';
 import Sidebar from 'react-sidebar';
+import routes from '../../routes';
+import { ConnectedRouter } from 'connected-react-router';
 const Search = lazy(() => import('../../pages/Search'));
-const Detail = lazy(() => import('../../pages/Detail'));
-const Carousel = lazy(() => import('../../components/Carousel'));
 
-function Home({ comics, status }) {
+function Home({ comics, status, history, pathname }) {
   const dispatch = useDispatch();
-  const [slide, setSlide] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { isShowing, toggle } = useSearch();
   const isFirstLoading = comics.items.length === 0 && status.isLoading;
 
-  const loadPage = () => {
-    dispatch(loadAllComics(comics.page + +1, comics.orderBy));
-  };
-
-  const handleSlidePage = actualSlide => {
-    const thresholdUpdate = 4;
-    if (actualSlide + thresholdUpdate >= comics.items.length && !status.isLoading) {
-      loadPage();
-    }
-    setSlide(actualSlide);
-  };
-
   const handleClickItemSearch = comic => {
     toggle();
     dispatch(selectComic(comic));
-  };
-
-  const handleClickItemCarousel = comic => {
-    dispatch(selectComic(comic));
+    history.push('/detail');
   };
 
   const handleClickRightIcon = () => {
@@ -44,7 +28,10 @@ function Home({ comics, status }) {
 
   const handleClickLeftIcon = () => {
     if (status.isInDetail) {
-      dispatch(selectComic({}));
+      history.goBack();
+      setTimeout(() => {
+        dispatch(selectComic({ creators: [] }));
+      });
     } else {
       setSidebarOpen(true);
     }
@@ -67,17 +54,8 @@ function Home({ comics, status }) {
           onClickLeftIcon={handleClickLeftIcon}
           onClickRightIcon={handleClickRightIcon}
         ></Header>
-        <Suspense fallback={<></>}>
-          {!status.isInDetail ? (
-            <Carousel
-              initSlide={slide}
-              items={comics}
-              onClickItemComic={handleClickItemCarousel}
-              onSlideChange={handleSlidePage}
-            ></Carousel>
-          ) : (
-            <Detail items={comics} onSlideChange={handleSlidePage}></Detail>
-          )}
+        <Suspense fallback={<>Loading...</>}>
+          <ConnectedRouter history={history}>{routes}</ConnectedRouter>
           <Search onClickItem={handleClickItemSearch} isShowing={isShowing} hide={toggle} />
         </Suspense>
         <div className={`text-body white copyright ${status.isInDetail ? 'detail' : ''}`}>
@@ -90,7 +68,8 @@ function Home({ comics, status }) {
 
 const mapStateToProps = state => ({
   comics: state.catalog.comics,
-  status: state.catalog.status
+  status: state.catalog.status,
+  pathname: state.router.location.pathname
 });
 
 const mapDispathToProps = {

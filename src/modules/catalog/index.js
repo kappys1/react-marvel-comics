@@ -12,6 +12,7 @@ const INITIAL_STATE = {
     title: '',
     description: '',
     thumbnail: '',
+    thumbnail_small: '',
     price: '',
     dates: {},
     creators: []
@@ -112,7 +113,7 @@ export default (state = INITIAL_STATE, action) => {
           original: state.comicsFilter.items
         }
       };
-    case FILTER_COMICS.CANCEL:
+    case FILTER_COMICS.FAILURE:
       return {
         ...state,
         status: {

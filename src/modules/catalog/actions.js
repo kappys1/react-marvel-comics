@@ -19,10 +19,7 @@ export const filterResults = (page, name) => async (dispatch, getState) => {
   );
 };
 
-export const selectComic = comic => ({
-  type: SELECT_COMIC,
-  payload: comic
-});
+export const selectComic = comic => ({ type: SELECT_COMIC, payload: comic });
 
 const callApiAction = (options, dispatcher) => async (dispatch, getState) => {
   dispatch({ type: dispatcher.REQUEST, payload: options.titleStartsWith });

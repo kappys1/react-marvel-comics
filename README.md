@@ -38,6 +38,7 @@ REACT_APP_API_PRIVATE_KEY=
 - [x] User Interface
 - [x] Performance
   - utilización de Suspense y Lazy en la carga inicial.
+  - Crear Image para cargar Thumbnail menor antes de la imagen principal.
 
 #### Interesante de implementar
 

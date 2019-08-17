@@ -1,19 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { connect } from 'react-redux';
 import ItemComic from '../../components/ItemComic';
 
-function Detail({ comic }) {
+function Detail({ comic, history }) {
   const [enterAnimation, setEnterAnimation] = useState('');
 
   useEffect(() => {
-    setTimeout(() => setEnterAnimation('animate'), 100);
+    if (!comic.id || comic.id === -1) {
+      history.push('/');
+    } else {
+      comic.creators = comic.creators || [];
+      setTimeout(() => setEnterAnimation('animate'), 100);
+    }
   }, []);
 
   const renderedContentBody = (
     <>
-      <div></div>
-      {/* <div className="label__pages label white"></div> */}
       <div className="label white">Description</div>
       <div className="text-body white">{comic.description}</div>
       <div className="content-creators">
@@ -26,7 +30,7 @@ function Detail({ comic }) {
       </div>
     </>
   );
-  return comic ? (
+  return comic.id ? (
     <div className={`Detail-page ${enterAnimation}`}>
       <div className="content-left">
         <ItemComic comic={comic}></ItemComic>
