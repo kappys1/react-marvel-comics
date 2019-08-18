@@ -11,12 +11,12 @@
 }
 
 .page {
-  background-image: url('../../assets/images/background2.png');
+  background-image: url('../../assets/images/background.png');
   background-size: 100% 100%;
   transition: background-image 0.7s ease-in-out, opacity 0.3s ease-in-out;
 
   &__detail {
-    background-image: url('../../assets/images/background.png');
+    background-image: url('../../assets/images/background2.png');
   }
 
   .LoadingContent {

@@ -2,7 +2,7 @@ import CryptoJS from 'crypto-js';
 
 class MarvelApI {
   static getComics(origOptions = {}) {
-    const baseUrl = 'https://gateway.marvel.com:443';
+    const baseUrl = `${process.env.REACT_APP_API_ROUTER}`;
     const defaultOptions = { page: 1, count: 10, name: '', titleStartsWith: '' };
     const options = Object.assign(defaultOptions, origOptions);
 

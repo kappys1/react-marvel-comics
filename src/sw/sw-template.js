@@ -13,15 +13,29 @@ if ('function' === typeof importScripts) {
     });
 
     workbox.routing.registerRoute(
-      /\.(?:png|gif|jpg|jpeg)$/,
+      /.*\.(?:png|jpg|jpeg|svg|gif)/,
       workbox.strategies.cacheFirst({
         cacheName: 'images',
         plugins: [
           new workbox.expiration.Plugin({
             maxEntries: 60,
-            maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+            maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+            // Automatically cleanup if quota is exceeded.
+            purgeOnQuotaError: true
           })
         ]
+      })
+    );
+
+    workbox.router.registerRoute(
+      process.env.REACT_APP_API_ROUTER,
+      workbox.strategies.cacheFirst({
+        cacheName: 'apiCache',
+        cacheExpiration: {
+          maxEntries: 50,
+          maxAgeSeconds: 3600 // 60 minutes
+        },
+        cacheableResponse: { statuses: [0, 200] }
       })
     );
   } else {
