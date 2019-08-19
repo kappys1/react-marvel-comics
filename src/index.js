@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import * as serviceWorker from './sw/serviceWorker';
 import configureStore, { history } from './store';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const store = configureStore();
 
@@ -13,7 +13,7 @@ window.store = store;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <Router basename={process.env.PUBLIC_URL}>
       <Home history={history} />
     </Router>
   </Provider>,
