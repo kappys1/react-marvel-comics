@@ -9,7 +9,7 @@ import Swiper from 'react-id-swiper';
 import ItemComic from '../../components/ItemComic';
 import './index.scss';
 
-function Carousel({ items, history, currentSlide }) {
+function Carousel({ items, status, history, currentSlide }) {
   const speedTransition = 700;
   const dispatch = useDispatch();
   const [swiper, setSwiper] = useState();
@@ -53,7 +53,7 @@ function Carousel({ items, history, currentSlide }) {
 
   const handleSlideChange = () => {
     const thresholdUpdate = 4;
-    if (currentSlide + thresholdUpdate >= items.items.length && !items.isLoading) {
+    if (currentSlide + thresholdUpdate >= items.items.length && !status.isLoading) {
       loadPage();
     }
   };
@@ -100,6 +100,7 @@ const mapDispathToProps = {
 
 const mapStateToProps = state => ({
   items: state.catalog.comics,
+  status: state.catalog.status,
   currentSlide: state.carousel.currentSlide
 });
 
