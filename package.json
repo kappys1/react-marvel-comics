@@ -8,7 +8,7 @@
     "url": "https://github.com/kappys1/react-marvel-comics.git"
   },
   "license": "MIT",
-  "homepage": ".",
+  "homepage": "https://kappys1.github.io/react-marvel-comics",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "history": "^4.9.0",

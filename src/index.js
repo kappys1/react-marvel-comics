@@ -9,8 +9,6 @@ import { ConnectedRouter } from 'connected-react-router';
 
 const store = configureStore();
 
-window.store = store;
-
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>

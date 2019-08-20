@@ -7,18 +7,9 @@ import WaitingComponent from '../components/WaitingComponent';
 const routes = (
   <div>
     <Switch>
-      <Route
-        exact
-        path={process.env.PUBLIC_URL + '/'}
-        component={WaitingComponent(Carousel)}
-        key="home"
-      />
-      <Route
-        path={process.env.PUBLIC_URL + '/detail'}
-        component={WaitingComponent(Detail)}
-        key="detail"
-      />
-      <Redirect to={process.env.PUBLIC_URL + '/'} />
+      <Route exact path="/" component={WaitingComponent(Carousel)} key="home" />
+      <Route path="/detail" component={WaitingComponent(Detail)} key="detail" />
+      <Redirect to="/" />
     </Switch>
   </div>
 );
