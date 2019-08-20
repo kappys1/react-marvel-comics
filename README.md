@@ -37,14 +37,14 @@ REACT_APP_API_PRIVATE_KEY=
 - [ ] Testing (in Progress🔄)
 - [x] User Interface
 - [x] Performance
-  - utilización de Suspense y Lazy en la carga inicial.
+  - Utilización de Suspense y Lazy en la carga inicial.
+  - Service worker para cachear imagenes.
   - Crear Image para cargar Thumbnail menor antes de la imagen principal.
 
 #### Interesante de implementar
 
 - [ ] Coverage en pipeline travis
-- [ ] service worker para cachear imagenes
-- [ ] Staging state en heroku para pasar a producción manualmente.
+- [x] Stados Staging y Production para deploys de app.
 - [ ] ¿algo mas?
 
 ## 👨🏻‍💻Descripción del Proceso
