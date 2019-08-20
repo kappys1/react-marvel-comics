@@ -7,7 +7,6 @@ import SidebarElm from '../../pages/Sidebar';
 import useSearch from '../../pages/Search/useSearch';
 import Sidebar from 'react-sidebar';
 import routes from '../../routes';
-import { ConnectedRouter } from 'connected-react-router';
 const Search = lazy(() => import('../../pages/Search'));
 
 function Home({ comics, status, history, pathname }) {
@@ -55,7 +54,7 @@ function Home({ comics, status, history, pathname }) {
           onClickRightIcon={handleClickRightIcon}
         ></Header>
         <Suspense fallback={<>Loading...</>}>
-          <ConnectedRouter history={history}>{routes}</ConnectedRouter>
+          {routes}
           <Search onClickItem={handleClickItemSearch} isShowing={isShowing} hide={toggle} />
         </Suspense>
         <div className={`text-body white copyright ${status.isInDetail ? 'detail' : ''}`}>

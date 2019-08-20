@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import * as serviceWorker from './sw/serviceWorker';
 import configureStore, { history } from './store';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
 
 const store = configureStore();
 
@@ -13,9 +13,9 @@ window.store = store;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <Home history={history} />
-    </Router>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
