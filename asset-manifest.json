@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-marvel-comics/static/css/main.b68cad30.chunk.css",
-    "main.js": "/react-marvel-comics/static/js/main.c3c05fe9.chunk.js",
-    "runtime~main.js": "/react-marvel-comics/static/js/runtime~main.a70fc7bd.js",
-    "static/css/2.3f3d6e18.chunk.css": "/react-marvel-comics/static/css/2.3f3d6e18.chunk.css",
-    "static/js/2.0c766980.chunk.js": "/react-marvel-comics/static/js/2.0c766980.chunk.js",
-    "static/css/3.1df8c3e5.chunk.css": "/react-marvel-comics/static/css/3.1df8c3e5.chunk.css",
-    "static/js/3.16a28940.chunk.js": "/react-marvel-comics/static/js/3.16a28940.chunk.js",
-    "index.html": "/react-marvel-comics/index.html",
-    "precache-manifest.c9c4706af082c661f1286ce12cf67c9f.js": "/react-marvel-comics/precache-manifest.c9c4706af082c661f1286ce12cf67c9f.js",
-    "service-worker.js": "/react-marvel-comics/service-worker.js",
-    "static/media/index.scss": "/react-marvel-comics/static/media/icomoon.f073dba9.woff",
-    "static/media/logo.png": "/react-marvel-comics/static/media/logo.ee0b56fe.png"
+    "main.css": "./static/css/main.648627ae.chunk.css",
+    "main.js": "./static/js/main.7c1ee568.chunk.js",
+    "runtime~main.js": "./static/js/runtime~main.3d697109.js",
+    "static/css/2.3f3d6e18.chunk.css": "./static/css/2.3f3d6e18.chunk.css",
+    "static/js/2.0c766980.chunk.js": "./static/js/2.0c766980.chunk.js",
+    "static/css/3.1df8c3e5.chunk.css": "./static/css/3.1df8c3e5.chunk.css",
+    "static/js/3.16a28940.chunk.js": "./static/js/3.16a28940.chunk.js",
+    "index.html": "./index.html",
+    "precache-manifest.e9a2741158f5ce103c3095cb79dc8028.js": "./precache-manifest.e9a2741158f5ce103c3095cb79dc8028.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/index.scss": "./static/media/icomoon.f073dba9.woff",
+    "static/media/logo.png": "./static/media/logo.ee0b56fe.png"
   }
 }
