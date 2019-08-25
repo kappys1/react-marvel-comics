@@ -9,6 +9,8 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+## Examples
+
 [Github Pages](https://kappys1.github.io/react-marvel-comics/)
 
 [Heroku](https://react-marvel-comic.herokuapp.com/)
@@ -51,7 +53,7 @@ REACT_APP_API_PRIVATE_KEY=
 
 ### 👨🏻‍🎨 Diseño
 
-Esta aplicación ha sido pensada diseñada pensando en el concepto **Mobile first** con [Sketch](https://github.com/kappys1/react-marvel-comics/tree/master/docs/sketch). Tiene como objetivo ser una SPA sin necesidad de utilización de React Router.
+Esta aplicación ha sido pensada diseñada pensando en el concepto **Mobile first** con [Sketch](https://github.com/kappys1/react-marvel-comics/tree/master/docs/sketch). Tiene como objetivo ser una SPA.
 Se ha creado un Styleguide acorde con el diseño de Marvel (rojo y blanco).
 
 Una vez terminado con Sketch, pase el diseño a [Zeplin](https://zeplin.io/) ya que gracias a esta herramienta es mucho mas facil a la hora de maquetar.
@@ -64,6 +66,14 @@ A su vez se ha intentado mostrar buenas practicas a la hora de consumir la API m
 ### ⚒️ CI/CD
 
 Se ha implementado un pipeline mediante travis en el que se ejecuta diferentes _stages_ como seria la realización de los test y build del proyecto para posteriormente hacer el deploy en github pages y heroku.
+
+#### pipeline
+
+| Branches    | Stages     | site                                                           |
+| ----------- | ---------- | -------------------------------------------------------------- |
+| Development |  Staging   | [heroku](https://kappys1.github.io/react-marvel-comics/)       |
+| Production  | Production | [Github Pages](https://kappys1.github.io/react-marvel-comics/) |
+| Production  | Production | [Heroku](https://react-marvel-comic.herokuapp.com/)            |
 
 ## Imagenes
 
